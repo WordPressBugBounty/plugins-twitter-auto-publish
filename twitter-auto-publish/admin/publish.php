@@ -22,6 +22,11 @@ function xyz_link_twap_future_to_publish($new_status, $old_status, $post){
 		$GLOBALS['twap_dup_publish']=array();
 	
 	$postid =$post->ID;
+	$post_published_date_time=$post_modified_date_time=time();
+	if ($post) {
+		$post_published_date_time = strtotime(get_the_date('Y-m-d H:i:s', $postid));
+		$post_modified_date_time = strtotime(get_the_modified_date('Y-m-d H:i:s', $postid));
+	}
 	$get_post_meta=get_post_meta($postid,"xyz_twap",true);
 	
 	$post_twitter_permission=get_option('xyz_twap_twpost_permission');
@@ -41,7 +46,23 @@ function xyz_link_twap_future_to_publish($new_status, $old_status, $post){
 			if($new_status == 'publish')
 			{
 				if ($get_post_meta == 1 ) {
+					if(get_option('xyz_twap_default_selection_edit')==0)
 					return;
+				}
+				else //prevent backend publish
+				{
+					//post meta not 1, edited post
+					if (($post_modified_date_time != $post_published_date_time) && $old_status=='publish' ) 
+					{//already plublished ,auto publish on edit is disabled
+						if ((get_option('xyz_twap_default_selection_edit') == 0))
+							return;
+					}
+					//post meta not 1, new post ,auto publish on create is disabled
+					else
+					{
+					if ((get_option('xyz_twap_default_selection_create') == 0))
+						return;
+					}
 				}
 			}
 			else return;
@@ -76,19 +97,21 @@ function xyz_twap_link_publish($post_ID) {
 	$_POST=stripslashes_deep($_POST);
 	$post_twitter_image_permission=0;$messagetopost='';
 	$get_post_meta_future_data=get_post_meta($post_ID,"xyz_twap_future_to_publish",true);
+	$get_post_meta=get_post_meta($postid,"xyz_twap",true);
 	$post_twitter_permission=get_option('xyz_twap_twpost_permission');
-	if(isset($_POST['xyz_twap_twpost_permission']))
-		$post_twitter_permission=$_POST['xyz_twap_twpost_permission'];
-	elseif(!empty($get_post_meta_future_data) && get_option('xyz_twap_default_selection_edit')==2 )///select values from post meta
+
+	if(!empty($get_post_meta_future_data) && ((get_option('xyz_twap_default_selection_edit')==2 && $get_post_meta==1) || (get_option('xyz_twap_default_selection_create')==2 && $get_post_meta!=1 )))///select values from post meta
 	{
 		$post_twitter_permission=$get_post_meta_future_data['xyz_twap_twpost_permission'];
 		$post_twitter_image_permission=$get_post_meta_future_data['xyz_twap_twpost_image_permission'];
 		$messagetopost=$get_post_meta_future_data['xyz_twap_twmessage'];
 	}
+	if(isset($_POST['xyz_twap_twpost_permission']))
+	$post_twitter_permission=$_POST['xyz_twap_twpost_permission'];
 	if ($post_twitter_permission != 1) {
 		$_POST=$_POST_CPY;
 		return ;
-	} else if(( (isset($_POST['_inline_edit'])) || (isset($_REQUEST['bulk_edit'])) )  && (get_option('xyz_twap_default_selection_edit') == 0) ) {
+	} else if(( (isset($_POST['_inline_edit'])) || (isset($_REQUEST['bulk_edit'])) )  && (get_option('xyz_twap_default_selection_edit') == 0 && $get_post_meta==1) ) {
 		$_POST=$_POST_CPY;
 		return;
 	}

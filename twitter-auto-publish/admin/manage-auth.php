@@ -92,7 +92,9 @@ jQuery(document).ready(function() {
 	//document.getElementById("xyz_twap_default_fbauth_tab").click();	
 
 	jQuery('#tw_auth_entries_div').show();
-	jQuery("#tw_show_all").attr('checked', true);
+	jQuery("#tw_show_same_domain").attr('checked', true);		
+	jQuery('#tw_twap_manage_auth_table tr:has(td.tw_diff_domain)').hide();
+	jQuery('#tw_twap_manage_auth_table tr:has(td.tw_same_domain)').show();
 	jQuery("#tw_show_all").click(function(){
 		jQuery('#tw_twap_manage_auth_table tr:has(td.tw_diff_domain)').show();
 		jQuery('#tw_twap_manage_auth_table tr:has(td.tw_same_domain)').show();

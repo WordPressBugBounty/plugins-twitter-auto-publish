@@ -3,8 +3,8 @@ Contributors: f1logic
 Donate link: https://xyzscripts.com/donate/
 Tags:  twitter, wp twitter auto publish, twitter auto publish, publish post to twitter, add link to twitter, twitter publishing, post to twitter, social media auto publish, social media publishing, social network auto publish, social media, social network
 Requires at least: 3.0
-Tested up to: 6.4.3
-Stable tag: 1.6.1
+Tested up to: 6.6.2
+Stable tag: 1.6.2
 License: GPLv2 or later
 
 Publish posts automatically to Twitter.
@@ -120,6 +120,11 @@ SSL peer verification may not be functioning in your server. Please turn off SSL
 4. Auto publish logs.
 
 == Changelog ==
+
+= WP Twitter Auto Publish 1.6.2 =
+* New settings value "Use metabox settings" added for "Auto publish on creating posts/pages/custom post types" to handle draft and scheduled posts
+* Bug fix: Backend post updates now follow publishing settings
+* Gutenberg and classical editor compatibility issues fixed
 
 = WP Twitter Auto Publish 1.6.1 =
 * Patch security vulnerability
