@@ -97,7 +97,7 @@ function xyz_twap_link_publish($post_ID) {
 	$_POST=stripslashes_deep($_POST);
 	$post_twitter_image_permission=0;$messagetopost='';
 	$get_post_meta_future_data=get_post_meta($post_ID,"xyz_twap_future_to_publish",true);
-	$get_post_meta=get_post_meta($postid,"xyz_twap",true);
+	$get_post_meta=get_post_meta($post_ID,"xyz_twap",true);
 	$post_twitter_permission=get_option('xyz_twap_twpost_permission');
 
 	if(!empty($get_post_meta_future_data) && ((get_option('xyz_twap_default_selection_edit')==2 && $get_post_meta==1) || (get_option('xyz_twap_default_selection_create')==2 && $get_post_meta!=1 )))///select values from post meta
