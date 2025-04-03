@@ -18,7 +18,7 @@ $twap_pub_msg=sprintf( __('%s automatically publishes posts from your blog to yo
 	echo $twap_feature_msg; ?>
 </p>
  </div>
- <table class="xyz-premium-comparison" cellspacing=0 style="width: 99%;">
+ <table class="xyz_twap_premium_comparison" cellspacing=0 style="width: 99%;">
 	<tr style="background-color: #EDEDED">
 		<td><h2><?php _e('Feature group','twitter-auto-publish');?></h2></td>
 		<td><h2><?php _e('Feature','twitter-auto-publish');?></h2></td>
@@ -31,7 +31,7 @@ $twap_pub_msg=sprintf( __('%s automatically publishes posts from your blog to yo
 	</tr>
 	<!-- Supported Media  -->
 	<tr>
-		<td rowspan="6"><h4><?php _e('Supported Media','twitter-auto-publish');?></h4></td>
+		<td rowspan="8"><h4><?php _e('Supported Media','twitter-auto-publish');?></h4></td>
 		<td> <?php _e('Facebook','twitter-auto-publish'); ?> </td>
 		<td><img src="<?php echo plugins_url("images/cross.png",XYZ_TWAP_PLUGIN_FILE);?>">
 		</td>
@@ -86,10 +86,28 @@ $twap_pub_msg=sprintf( __('%s automatically publishes posts from your blog to yo
 		<td><img src="<?php echo plugins_url("images/tick.png",XYZ_TWAP_PLUGIN_FILE);?>">
 		</td>
 	</tr>
+	<tr>
+		<td> <?php _e('Telegram','twitter-auto-publish'); ?> </td>
+		<td><img src="<?php echo plugins_url("images/cross.png",XYZ_TWAP_PLUGIN_FILE);?>">
+		</td>
+		<td><img src="<?php echo plugins_url("images/tick.png",XYZ_TWAP_PLUGIN_FILE);?>">
+		</td>
+		<td><img src="<?php echo plugins_url("images/tick.png",XYZ_TWAP_PLUGIN_FILE);?>">
+		</td>
+	</tr>
+	<tr>
+		<td> <?php _e('Threads','twitter-auto-publish'); ?> </td>
+		<td><img src="<?php echo plugins_url("images/cross.png",XYZ_TWAP_PLUGIN_FILE);?>">
+		</td>
+		<td><img src="<?php echo plugins_url("images/tick.png",XYZ_TWAP_PLUGIN_FILE);?>">
+		</td>
+		<td><img src="<?php echo plugins_url("images/tick.png",XYZ_TWAP_PLUGIN_FILE);?>">
+		</td>
+	</tr>
 
 	<!-- Posting Options  -->
 	<tr>
-		<td rowspan="15"><h4><?php _e('Posting Options','twitter-auto-publish');?></h4></td>
+		<td rowspan="17"><h4><?php _e('Posting Options','twitter-auto-publish');?></h4></td>
 		<td><?php _e('Publish to facebook pages','twitter-auto-publish');?></td>
 		<td><img src="<?php echo plugins_url("images/cross.png",XYZ_TWAP_PLUGIN_FILE);?>">
 		</td>
@@ -150,6 +168,24 @@ $twap_pub_msg=sprintf( __('%s automatically publishes posts from your blog to yo
 	</tr>
 
 	<tr>
+		<td><?php _e('Publish to telegram channels and groups','twitter-auto-publish');?></td>
+		<td><img src="<?php echo plugins_url("images/cross.png",XYZ_TWAP_PLUGIN_FILE);?>">
+		</td>
+		<td><img src="<?php echo plugins_url("images/tick.png",XYZ_TWAP_PLUGIN_FILE);?>">
+		</td>
+		<td><img src="<?php echo plugins_url("images/tick.png",XYZ_TWAP_PLUGIN_FILE);?>">
+		</td>
+	</tr>
+	<tr>
+		<td><?php _e('Publish to threads profile','twitter-auto-publish');?></td>
+		<td><img src="<?php echo plugins_url("images/cross.png",XYZ_TWAP_PLUGIN_FILE);?>">
+		</td>
+		<td><img src="<?php echo plugins_url("images/tick.png",XYZ_TWAP_PLUGIN_FILE);?>">
+		</td>
+		<td><img src="<?php echo plugins_url("images/tick.png",XYZ_TWAP_PLUGIN_FILE);?>">
+		</td>
+	</tr>
+	<tr>
 		<td><?php _e('Option to add twitter image description for visually impaired people','twitter-auto-publish');?></td>
 		<td><img src="<?php echo plugins_url("images/cross.png",XYZ_TWAP_PLUGIN_FILE);?>">
 		</td>
@@ -200,7 +236,7 @@ $twap_pub_msg=sprintf( __('%s automatically publishes posts from your blog to yo
 	</tr>
 
 	<tr>
-		<td><?php _e('Hash Tags support for Facebook, Twitter, Linkedin, Instagram, Pinterest and Tumblr','twitter-auto-publish');?></td>
+		<td><?php _e('Hash Tags support for Facebook, Twitter, Linkedin, Instagram, Tumblr, Threads, Pinterest and Telegram','twitter-auto-publish');?></td>
 		<td><img src="<?php echo plugins_url("images/cross.png",XYZ_TWAP_PLUGIN_FILE);?>">
 		</td>
 		<td><img src="<?php echo plugins_url("images/tick.png",XYZ_TWAP_PLUGIN_FILE);?>">
@@ -273,7 +309,7 @@ $twap_pub_msg=sprintf( __('%s automatically publishes posts from your blog to yo
 	</tr>
 
 	<tr>
-		<td><?php _e('Publish multiple images to facebook, tumblr, linkedin and twitter along with post content','twitter-auto-publish');?></td>
+		<td><?php _e('Publish multiple images to facebook, tumblr, linkedin, twitter, threads and telegram along with post content	','twitter-auto-publish');?></td>
 		<td><img src="<?php echo plugins_url("images/cross.png",XYZ_TWAP_PLUGIN_FILE);?>">
 		</td>
 		<td><img src="<?php echo plugins_url("images/tick.png",XYZ_TWAP_PLUGIN_FILE);?>">
@@ -296,7 +332,7 @@ $twap_pub_msg=sprintf( __('%s automatically publishes posts from your blog to yo
 
 	<tr>
 	<td rowspan="4"><h4><?php _e('Video/Audio Options','twitter-auto-publish');?></h4></td>
-		<td><?php _e('Publish video to facebook, tumblr, Linkedin, Instagram and twitter along with post content','twitter-auto-publish');?> </td>
+		<td><?php _e('Publish video to facebook, tumblr,Linkedin, Instagram, twitter, threads and telegram along with post content','twitter-auto-publish');?> </td>
 		<td><img src="<?php echo plugins_url("images/cross.png",XYZ_TWAP_PLUGIN_FILE);?>">
 		</td>
 		<td><img src="<?php echo plugins_url("images/tick.png",XYZ_TWAP_PLUGIN_FILE);?>">
@@ -560,23 +596,16 @@ $twap_pub_msg=sprintf( __('%s automatically publishes posts from your blog to yo
 		</td>
 	</tr>
 	<tr>
-		<td rowspan="3"><h4><?php _e('Other','twitter-auto-publish');?></h4></td>
+		<td rowspan="2"><h4><?php _e('Other','twitter-auto-publish');?></h4></td>
 		<td><?php _e('Price','twitter-auto-publish');?></td>
 		<td><?php _e('FREE','twitter-auto-publish');?></td>
-		<td><?php _e('Starts from 39 USD','twitter-auto-publish');?></td>
-		<td><?php _e('Starts from 69 USD','twitter-auto-publish');?></td>
-	</tr>
-		<tr>
-		<td><?php $twap_smapsolution="SMAPSOLUTIONS"; 
-		$twap_package_msg=sprintf(__('%s API package for 1 year, worth 10 USD(1 twitter account ,10 api calls per hour)','twitter-auto-publish'),$twap_smapsolution);
-		echo $twap_package_msg; ?></td>
-		<td><?php _e('1 month free subscription','twitter-auto-publish');?></td>
-		<td colspan="2"><?php _e('1 year free subscription','twitter-auto-publish');?></td>
+		<td><?php _e('Starts from 29 USD','twitter-auto-publish');?></td>
+		<td><?php _e('Starts from 59 USD','twitter-auto-publish');?></td>
 	</tr>
 	<tr>
 		<td><?php _e('Purchase','twitter-auto-publish');?></td>
 		<td></td>
-		<td style="padding: 2px" colspan='2' ><a target="_blank"href="https://xyzscripts.com/wordpress-plugins/social-media-auto-publish/purchase"  class="xyz-twap-buy-button"><?php _e('Buy Now','twitter-auto-publish');?></a>
+		<td style="padding: 2px" colspan='2' ><a target="_blank"href="https://xyzscripts.com/wordpress-plugins/social-media-auto-publish/purchase"  class="xyz_twap_buy_button"><?php _e('Buy Now','twitter-auto-publish');?></a>
 		</td>
 	</tr>
 

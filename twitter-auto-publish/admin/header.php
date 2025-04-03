@@ -15,8 +15,8 @@ if($_POST && isset($_POST['xyz_credit_link']))
 	
 	update_option('xyz_credit_link', $xyz_credit_link);
 	?>
-<div class="system_notice_area_style1" id="system_notice_area">
-	<?php _e('Settings updated successfully.','twitter-auto-publish'); ?> &nbsp;&nbsp;&nbsp;<span id="system_notice_area_dismiss"><?php _e('Dismiss','twitter-auto-publish'); ?></span>
+<div class="xyz_twap_system_notice_area_style1" id="xyz_twap_system_notice_area">
+	<?php _e('Settings updated successfully.','twitter-auto-publish'); ?> &nbsp;&nbsp;&nbsp;<span id="xyz_twap_system_notice_area_dismiss"><?php _e('Dismiss','twitter-auto-publish'); ?></span>
 </div>
 	<?php 
 }
@@ -27,9 +27,9 @@ if(!$_POST && isset($_GET['twap_blink'])&&isset($_GET['twap_blink'])=='en'){
 	}
 	update_option('xyz_credit_link',"twap");
 ?>
-<div class="system_notice_area_style1" id="system_notice_area">
+<div class="xyz_twap_system_notice_area_style1" id="xyz_twap_system_notice_area">
 <?php _e('Thank you for enabling backlink.','twitter-auto-publish'); ?>
- &nbsp;&nbsp;&nbsp;<span id="system_notice_area_dismiss"> <?php _e('Dismiss','twitter-auto-publish'); ?>
+ &nbsp;&nbsp;&nbsp;<span id="xyz_twap_system_notice_area_dismiss"> <?php _e('Dismiss','twitter-auto-publish'); ?>
  </span>
 </div>
 
@@ -117,3 +117,4 @@ jQuery(document).ready(function() {
 
 
 <div style="clear: both"></div>
+<div style="border: 1px solid #CCC; border-radius:2px;padding:10px;width:97%;overflow-x: auto;" id="xyz_twap_content_border">

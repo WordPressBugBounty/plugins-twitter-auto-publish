@@ -49,10 +49,11 @@ if(!function_exists('xyz_twap_links')){
 
 			$links[] = '<a href="http://help.xyzscripts.com/docs/twitter-auto-publish/faq/"  title="FAQ">FAQ</a>';
 			$links[] = '<a href="http://help.xyzscripts.com/docs/twitter-auto-publish/"  title="Read Me">README</a>';
-			$links[] = '<a href="https://xyzscripts.com/support/" class="xyz_support" title="Support"></a>';
-			$links[] = '<a href="http://twitter.com/xyzscripts" class="xyz_twitt" title="Follow us on twitter"></a>';
-			$links[] = '<a href="https://www.facebook.com/xyzscripts" class="xyz_fbook" title="Facebook"></a>';
-			$links[] = '<a href="http://www.linkedin.com/company/xyzscripts" class="xyz_linkdin" title="Follow us on linkedIn"></a>';
+			$links[] = '<a href="https://xyzscripts.com/support/" class="xyz_twap_support" title="Support"></a>';
+			$links[] = '<a href="http://twitter.com/xyzscripts" class="xyz_twap_twitt" title="Follow us on twitter"></a>';
+			$links[] = '<a href="https://www.facebook.com/xyzscripts" class="xyz_twap_fbook" title="Facebook"></a>';
+			$links[] = '<a href="http://www.linkedin.com/company/xyzscripts" class="xyz_twap_linkdin" title="Follow us on linkedIn"></a>';
+			$links[] = '<a href="https://www.instagram.com/xyz_scripts/" class="xyz_twap_insta" title="Follow us on Instagram"></a>';
 		}
 		return $links;
 	}
@@ -200,6 +201,15 @@ if(!function_exists('xyz_twap_post_to_smap_api'))
 			}
 			return $content;
 		}
+	}
+}
+if(!function_exists('xyz_twap_custom_cron_interval')){
+	function xyz_twap_custom_cron_interval( $schedules ) {
+		$schedules['twap_reauth_every_two_hours'] = array(
+			'interval' => 2 * 60 * 60, // 2 hours in seconds
+			'display'  =>__('Every 2 hours','twitter-auto-publish'),
+		);
+		return $schedules;
 	}
 }
 ?>

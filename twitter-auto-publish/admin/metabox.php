@@ -55,9 +55,10 @@ if(isset($_GET['action']) && $_GET['action']=="edit" && !empty($_GET['post'])) /
 			return;
 
 	}
+	$tw_af=get_option('xyz_twap_tw_af');
 	$xyz_twap_tw_app_sel_mode=get_option('xyz_twap_tw_app_sel_mode');
 	$xyz_twap_smapsoln_userid=get_option('xyz_twap_smapsoln_userid');
-	if(((get_option('xyz_twap_twconsumer_id')!="" && get_option('xyz_twap_twconsumer_secret')!="" && get_option('xyz_twap_tw_id')!="" && get_option('xyz_twap_current_twappln_token')!="" && get_option('xyz_twap_twaccestok_secret')!="" && $xyz_twap_tw_app_sel_mode==0 )|| ( $xyz_twap_tw_app_sel_mode==1 && !empty($xyz_twap_smapsoln_userid))) && get_option('xyz_twap_twpost_permission')==1)
+	if((get_option('xyz_twap_client_id')!="" && get_option('xyz_twap_client_secret')!="" && $tw_af!=1 && $xyz_twap_tw_app_sel_mode==2) || ((get_option('xyz_twap_twconsumer_id')!="" && get_option('xyz_twap_twconsumer_secret')!="" && get_option('xyz_twap_tw_id')!="" && get_option('xyz_twap_current_twappln_token')!="" && get_option('xyz_twap_twaccestok_secret')!="" && $xyz_twap_tw_app_sel_mode==0 )|| ( $xyz_twap_tw_app_sel_mode==1 && !empty($xyz_twap_smapsoln_userid))) && get_option('xyz_twap_twpost_permission')==1)
 	add_meta_box( "xyz_twap", '<strong>WP Twitter Auto Publish </strong>', 'xyz_twap_addpostmetatags') ;
 }
 function xyz_twap_addpostmetatags()
@@ -257,10 +258,13 @@ function inArray(needle, haystack) {
 <input type="hidden" name="xyz_twap_post" id="xyz_twap_post" value="0" >
 	<tr id="xyz_twMetabox"><td colspan="2" >
 <?php 
+$xyz_twap_tw_af=get_option('xyz_twap_tw_af');
+$xyz_twap_tw_token=get_option('xyz_twap_tw_token');
 $taccess_token_secret=get_option('xyz_twap_twaccestok_secret');
 $xyz_twap_tw_app_sel_mode=get_option('xyz_twap_tw_app_sel_mode');
 $xyz_twap_smapsoln_userid=get_option('xyz_twap_smapsoln_userid');
-if(get_option('xyz_twap_twpost_permission')==1 && ( ($xyz_twap_tw_app_sel_mode==1 && !empty($xyz_twap_smapsoln_userid)) || ($xyz_twap_tw_app_sel_mode==0 && !empty($taccess_token_secret)))) {
+if(get_option('xyz_twap_twpost_permission')==1 && ($xyz_twap_tw_app_sel_mode==1 && !empty($xyz_twap_smapsoln_userid)) || ($xyz_twap_tw_app_sel_mode==0 && !empty($taccess_token_secret))|| ($xyz_twap_tw_app_sel_mode==2 && !empty($xyz_twap_tw_token) && $xyz_twap_tw_af!=1))
+{
 	$postid=0;
 if (isset($_GET['post']))
 	$postid=intval($_GET['post']);
@@ -293,7 +297,7 @@ if (((get_option('xyz_twap_default_selection_edit')==2 && isset($GLOBALS['edit_f
 	<tr valign="top">
 		<td class="xyz_twap_pleft15" width="60%"><?php _e('Enable auto publish posts to my twitter account','twitter-auto-publish'); ?>
 		</td>
-		<td  class="switch-field">
+		<td  class="xyz_twap_switch_field">
 		<label id="xyz_twap_twpost_permission_yes"><input type="radio" name="xyz_twap_twpost_permission" id="xyz_twap_twpost_permission_1" value="1" <?php  if($post_permission==1) echo 'checked';?>/><?php _e('Yes','twitter-auto-publish'); ?></label>
 		<label id="xyz_twap_twpost_permission_no"><input type="radio" name="xyz_twap_twpost_permission" id="xyz_twap_twpost_permission_0" value="0" <?php  if($post_permission==0) echo 'checked';?>/><?php _e('No','twitter-auto-publish'); ?></label>
 	</td>
@@ -315,7 +319,7 @@ if (((get_option('xyz_twap_default_selection_edit')==2 && isset($GLOBALS['edit_f
 	<tr valign="top" id="twmf_twap">
 		<td class="xyz_twap_pleft15"> <?php _e('Message format for posting','twitter-auto-publish'); ?><img src="<?php echo $heimg?>"
 						onmouseover="detdisplay_twap('xyz_twap_informationdiv')" onmouseout="dethide_twap('xyz_twap_informationdiv')" style="width:13px;height:auto;">
-						<div id="xyz_twap_informationdiv" class="twap_informationdiv"
+						<div id="xyz_twap_informationdiv" class="xyz_twap_informationdiv"
 							style="display: none; font-weight: normal;">
 							{POST_TITLE} - <?php _e('Insert the title of your post.','twitter-auto-publish'); ?><br/>
 							{PERMALINK} - <?php _e('Insert the URL where your post is displayed.','twitter-auto-publish'); ?><br/>

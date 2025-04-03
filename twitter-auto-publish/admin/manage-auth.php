@@ -2,11 +2,11 @@
 global $wpdb;
 if(isset($_GET['msg']) && $_GET['msg']=='twap_pack_updated'){
 	?>
-<div class="system_notice_area_style1" id="system_notice_area">
+<div class="xyz_twap_system_notice_area_style1" id="xyz_twap_system_notice_area">
 <?php $twap_word_smap="SMAP";
 $twap_smap_update_msg=sprintf(__('%s Package updated successfully.','twitter-auto-publish'),$twap_word_smap); 
 echo $twap_smap_update_msg; ?>
-&nbsp;&nbsp;&nbsp;<span id="system_notice_area_dismiss"><?php _e('Dismiss','twitter-auto-publish'); ?>
+&nbsp;&nbsp;&nbsp;<span id="xyz_twap_system_notice_area_dismiss"><?php _e('Dismiss','twitter-auto-publish'); ?>
 </span>
 </div>
 <?php
@@ -137,13 +137,13 @@ jQuery(document).ready(function() {
 	    	var data=jQuery.parseJSON(data);
 	    	if(data.status==1){
 	    		jQuery(".tr_"+tw_auth_id).remove();
-	    		if(jQuery('#system_notice_area').length==0)
-	    			jQuery('body').append('<div class="system_notice_area_style1" id="system_notice_area"></div>');
-	    			jQuery("#system_notice_area").html(xyz_script_twap_var.html1);
-	    		 	jQuery("#system_notice_area").append('<span id="system_notice_area_dismiss"><?php _e('Dismiss','twitter-auto-publish'); ?></span>');
-	    			jQuery("#system_notice_area").show();
-	    			jQuery('#system_notice_area_dismiss').click(function() {
-	    				jQuery('#system_notice_area').animate({
+	    		if(jQuery('#xyz_twap_system_notice_area').length==0)
+	    			jQuery('body').append('<div class="xyz_twap_system_notice_area_style1" id="xyz_twap_system_notice_area"></div>');
+	    			jQuery("#xyz_twap_system_notice_area").html(xyz_script_twap_var.html1);
+	    		 	jQuery("#xyz_twap_system_notice_area").append('<span id="xyz_twap_system_notice_area_dismiss"><?php _e('Dismiss','twitter-auto-publish'); ?></span>');
+	    			jQuery("#xyz_twap_system_notice_area").show();
+	    			jQuery('#xyz_twap_system_notice_area_dismiss').click(function() {
+	    				jQuery('#xyz_twap_system_notice_area').animate({
 	    					opacity : 'hide',
 	    					height : 'hide'
 	    				}, 500);
@@ -201,13 +201,13 @@ jQuery(".delete_inactive_tw_entry").off('click').on('click', function() {
     	var data=jQuery.parseJSON(data);
     	if(data.status==1){
     		jQuery(".tr_inactive"+tr_iterationid).remove();
-    		if(jQuery('#system_notice_area').length==0)
-    			jQuery('body').append('<div class="system_notice_area_style1" id="system_notice_area"></div>');
-    			jQuery("#system_notice_area").html(xyz_script_twap_var.html2); 
-    			jQuery("#system_notice_area").append('<span id="system_notice_area_dismiss"><?php _e('Dismiss','twitter-auto-publish'); ?></span>');
-    			jQuery("#system_notice_area").show();
-    			jQuery('#system_notice_area_dismiss').click(function() {
-    				jQuery('#system_notice_area').animate({
+    		if(jQuery('#xyz_twap_system_notice_area').length==0)
+    			jQuery('body').append('<div class="xyz_twap_system_notice_area_style1" id="xyz_twap_system_notice_area"></div>');
+    			jQuery("#xyz_twap_system_notice_area").html(xyz_script_twap_var.html2); 
+    			jQuery("#xyz_twap_system_notice_area").append('<span id="xyz_twap_system_notice_area_dismiss"><?php _e('Dismiss','twitter-auto-publish'); ?></span>');
+    			jQuery("#xyz_twap_system_notice_area").show();
+    			jQuery('#xyz_twap_system_notice_area_dismiss').click(function() {
+    				jQuery('#xyz_twap_system_notice_area').animate({
     					opacity : 'hide',
     					height : 'hide'
     				}, 500);

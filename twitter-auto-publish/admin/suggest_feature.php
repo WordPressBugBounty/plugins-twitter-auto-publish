@@ -6,25 +6,25 @@ if(isset($_GET['msg']))
 	$xyz_twap_message = $_GET['msg'];
 if($xyz_twap_message == 1){
 	?> 
-	<div class="system_notice_area_style1" id="system_notice_area">
+	<div class="xyz_twap_system_notice_area_style1" id="xyz_twap_system_notice_area">
 	<?php _e('Thank you for the suggestion.','twitter-auto-publish'); ?> &nbsp;&nbsp;&nbsp;<span
-	id="system_notice_area_dismiss"> <?php _e('Dismiss','twitter-auto-publish'); ?> </span>
+	id="xyz_twap_system_notice_area_dismiss"> <?php _e('Dismiss','twitter-auto-publish'); ?> </span>
 	</div>
 	<?php
 	}
 else if($xyz_twap_message == 2){
 		?>
-		<div class="system_notice_area_style0" id="system_notice_area">
+		<div class="xyz_twap_system_notice_area_style0" id="xyz_twap_system_notice_area">
 		<?php $twap_wp_mail="wp_mail"; $twap_wp_mail_msg=sprintf(__('%s not able to process the request.','twitter-auto-publish'),$twap_wp_mail); echo $twap_wp_mail_msg; ?> &nbsp;&nbsp;&nbsp;<span
-		id="system_notice_area_dismiss"><?php _e('Dismiss','twitter-auto-publish'); ?> </span>
+		id="xyz_twap_system_notice_area_dismiss"><?php _e('Dismiss','twitter-auto-publish'); ?> </span>
 		</div>
 		<?php
 	}
 else if($xyz_twap_message == 3){
 	?>
-	<div class="system_notice_area_style0" id="system_notice_area">
+	<div class="xyz_twap_system_notice_area_style0" id="xyz_twap_system_notice_area">
 	<?php _e('Please suggest a feature','twitter-auto-publish'); ?>&nbsp;&nbsp;&nbsp;<span
-	id="system_notice_area_dismiss"> <?php _e('Dismiss','twitter-auto-publish'); ?></span>
+	id="xyz_twap_system_notice_area_dismiss"> <?php _e('Dismiss','twitter-auto-publish'); ?></span>
 	</div>
 	<?php
 }
@@ -64,7 +64,7 @@ if (isset($_POST) && isset($_POST['xyz_send_mail']))
 <textarea name="xyz_twap_suggested_feature" id="xyz_twap_suggested_feature" style="width:620px;height:250px !important;"></textarea>
 </td></tr>
 <tr>
-<td><input name="xyz_send_mail" class="submit_twap_new" style="color:#FFFFFF;border-radius:4px; margin-bottom:10px;" type="submit" value="<?php _e('Send Mail To Us','twitter-auto-publish'); ?>" >
+<td><input name="xyz_send_mail" class="xyz_twap_submit_new" style="color:#FFFFFF;border-radius:4px; margin-bottom:10px;" type="submit" value="<?php _e('Send Mail To Us','twitter-auto-publish'); ?>" >
 </td></tr>
 </table>
 </form>

@@ -83,19 +83,20 @@ function xyz_twap_logs()
 add_action('wp_head', 'xyz_smap_insert_twitter_card');
 function xyz_smap_insert_twitter_card(){
     global $post;
-    $xyz_smap_free_enforce_twitter_cards=get_option('xyz_smap_free_enforce_twitter_cards');
+    $xyz_twap_tw_enforce_twitter_cards=get_option('xyz_twap_tw_enforce_twitter_cards');
     if (empty($post))
         $post=get_post();
-        if (!empty($post) && ( $xyz_smap_free_enforce_twitter_cards==1 ) ){
+        if (!empty($post) && ( $xyz_twap_tw_enforce_twitter_cards==1 ) )
+        {
             $postid= $post->ID;
             $name='';$excerpt='';$attachmenturl='';
             if(isset($postid) && $postid>0 && isset($_SERVER["HTTP_USER_AGENT"]))
             { 
                 $get_post_meta_insert_twitter_card=0;
-                $get_post_meta_future_data=get_post_meta($postid,"xyz_twap_future_to_publish",true);//echo "<pre>";print_r($get_post_meta_future_data);die;
+                $get_post_meta_future_data=get_post_meta($postid,"xyz_twap_future_to_publish",true);
                 
                 $get_post_meta_insert_twitter_card=get_post_meta($postid,"xyz_twap_insert_twitter_card",true);
-                if (!empty($get_post_meta_future_data) && ( $xyz_smap_free_enforce_twitter_cards==1 ) && (strpos($_SERVER["HTTP_USER_AGENT"], "Twitterbot") !== false))
+                if (!empty($get_post_meta_future_data) && ( $xyz_twap_tw_enforce_twitter_cards==1 ) && (strpos($_SERVER["HTTP_USER_AGENT"], "Twitterbot") !== false))
                 { 
                     $xyz_smap_apply_filters=get_option('xyz_smap_apply_filters');
                         $ar2=explode(",",$xyz_smap_apply_filters);
@@ -137,7 +138,7 @@ function xyz_smap_insert_twitter_card(){
                                 if(is_array($attachmenturl) && isset($attachmenturl['image_url']) && $attachmenturl['image_url']!='')
                                     $attachmenturl=$attachmenturl['image_url'];//print_r($name);die;**/
                 }
-                if (($get_post_meta_insert_twitter_card==1) && strpos($_SERVER["HTTP_USER_AGENT"], "Twitterbot") !== false && ($xyz_smap_premium_add_tw_card==1))
+                if (($get_post_meta_insert_twitter_card==1) && strpos($_SERVER["HTTP_USER_AGENT"], "Twitterbot") !== false && ($xyz_twap_tw_enforce_twitter_cards==1))
                     {
                         echo '<meta name="twitter:card" content="summary_large_image" />';
                         if(!empty( $name ))
@@ -150,4 +151,12 @@ function xyz_smap_insert_twitter_card(){
                 }
             }
         }
-?>
+        add_filter( 'cron_schedules', 'xyz_twap_custom_cron_interval' );
+
+        if ( ! wp_next_scheduled( 'xyz_twap_tw_auto_reauth' ) ) {
+            wp_schedule_event( time(), 'twap_reauth_every_two_hours', 'xyz_twap_tw_auto_reauth' );
+        }
+        if(get_option('xyz_twap_tw_app_sel_mode')==2){
+            require_once (dirname(__FILE__) . '/../api/twitter.php');
+            add_action( 'xyz_twap_tw_auto_reauth', 'xyz_twap_twitter_auth2_reauth' );
+        }

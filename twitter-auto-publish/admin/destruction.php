@@ -32,8 +32,14 @@ function twap_free_destroy()
 		
 	delete_option('xyz_twap_twconsumer_secret');
 	delete_option('xyz_twap_twconsumer_id');
+	delete_option('xyz_twap_client_id');//auth2.0
+	delete_option('xyz_twap_client_secret');//auth2.0
 	delete_option('xyz_twap_tw_id');
 	delete_option('xyz_twap_current_twappln_token');
+	delete_option('xyz_twap_tw_token');
+	delete_option('xyz_twap_tw_refresh_token');
+	delete_option('xyz_twap_tw_af');
+	delete_option('xyz_twap_last_auth_time');
 	delete_option('xyz_twap_twpost_permission');
 	delete_option('xyz_twap_twpost_image_permission');
 	delete_option('xyz_twap_twaccestok_secret');
@@ -42,6 +48,7 @@ function twap_free_destroy()
 	delete_option('xyz_twap_apply_filters');
 	
 	delete_option('xyz_twap_free_version');
+	delete_option('xyz_twap_tw_enforce_twitter_cards');
 	
 	delete_option('xyz_twap_include_pages');
 	delete_option('xyz_twap_include_posts');

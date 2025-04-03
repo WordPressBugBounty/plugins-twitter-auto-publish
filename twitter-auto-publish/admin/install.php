@@ -42,6 +42,8 @@ function twap_install_free()
 
 	add_option('xyz_twap_twconsumer_secret', '');
 	add_option('xyz_twap_twconsumer_id','');
+	add_option('xyz_twap_client_id', '');//auth2.0
+	add_option('xyz_twap_client_secret','');//auth2.0
 	add_option('xyz_twap_tw_id', '');
 	add_option('xyz_twap_current_twappln_token', '');
 	add_option('xyz_twap_twpost_permission', '1');
@@ -67,7 +69,13 @@ function twap_install_free()
 	add_option('xyz_twap_default_selection_create', '1');
 	add_option('xyz_twap_tw_char_limit',280);
 	add_option('xyz_twap_credit_dismiss','0');
-	add_option('xyz_smap_free_enforce_twitter_cards',0);
+	if (get_option('xyz_twap_tw_enforce_twitter_cards') === false){
+	update_option('xyz_twap_tw_enforce_twitter_cards', get_option('xyz_smap_free_enforce_twitter_cards') ? 1 : 0);
+	}
+	add_option('xyz_twap_tw_token', '');
+	add_option('xyz_twap_tw_refresh_token','');
+	add_option('xyz_twap_last_auth_time','');
+	add_option('xyz_twap_tw_af',1);
 	
 	$xyz_twap_include_categories=get_option('xyz_twap_include_categories');
 	if ( is_array($xyz_twap_include_categories) )

@@ -117,16 +117,24 @@ function xyz_twap_link_publish($post_ID) {
 	}
 	global $current_user;
 	wp_get_current_user();
-	//$af=get_option('xyz_twap_af');
-	
+	//$af=get_option('xyz_twap_af');	
 	
 /////////////twitter//////////
+$tappid=$tappsecret=$taccess_token=$taccess_token_secret=$tauthToken='';
+$tw_af=1;
+	$xyz_twap_tw_app_sel_mode=get_option('xyz_twap_tw_app_sel_mode');
+	if($xyz_twap_tw_app_sel_mode==0){
 	$tappid=get_option('xyz_twap_twconsumer_id');
 	$tappsecret=get_option('xyz_twap_twconsumer_secret');
+		$taccess_token=get_option('xyz_twap_current_twappln_token');
+		$taccess_token_secret=get_option('xyz_twap_twaccestok_secret');
+		
+	}
+	elseif($xyz_twap_tw_app_sel_mode==2){
+		$tauthToken = get_option('xyz_twap_tw_token');
+		$tw_af = get_option('xyz_twap_tw_af');
+	}
 	$twid=get_option('xyz_twap_tw_id');
-	$taccess_token=get_option('xyz_twap_current_twappln_token');
-	$taccess_token_secret=get_option('xyz_twap_twaccestok_secret');
-	$xyz_twap_tw_app_sel_mode=get_option('xyz_twap_tw_app_sel_mode');
 	$xyz_twap_smapsoln_userid=get_option('xyz_twap_smapsoln_userid');
 	$xyz_twap_smapsoln_secret_key=get_option('xyz_twap_smapsoln_secret_key');
 	$xyz_twap_xyzscripts_user_id=get_option('xyz_twap_xyzscripts_user_id');
@@ -283,13 +291,12 @@ function xyz_twap_link_publish($post_ID) {
 		
 		$description=strip_tags($description);		
 		$description=strip_shortcodes($description);
-
 		$description=str_replace("&nbsp;","",$description);
+		$excerpt=str_replace("&nbsp;","", $excerpt);
 	
-		$excerpt=str_replace("&nbsp;","",$excerpt);
-
-
-		if((($xyz_twap_tw_app_sel_mode==1 && !empty($xyz_twap_smapsoln_userid) && !empty($xyz_twap_smapsoln_secret_key) ) || ($taccess_token!="" && $taccess_token_secret!="" && $tappid!="" && $tappsecret!="" && $xyz_twap_tw_app_sel_mode==0) ) && $post_twitter_permission==1)
+		if((($xyz_twap_tw_app_sel_mode==1 && !empty($xyz_twap_smapsoln_userid) && !empty($xyz_twap_smapsoln_secret_key) ) ||
+		 ($xyz_twap_tw_app_sel_mode==0 && $taccess_token!="" && $taccess_token_secret!="" && $tappid!="" && $tappsecret!="") || 
+		 ($xyz_twap_tw_app_sel_mode==2 && $tw_af!=1 && $tauthToken!='')) && $post_twitter_permission==1)
 		{
 			
 			////image up start///
@@ -309,7 +316,7 @@ function xyz_twap_link_publish($post_ID) {
 					{
 						$image_found = 1;
 							if (($img['headers']['content-length']) && trim($img['headers']['content-length'])!='')
-							{
+						{						$img_size_bytes=$img['headers']['content-length'];
 								$img_size=$img['headers']['content-length']/(1024*1024);
 								if($img_size>3){
 									$image_found=0;$img_status="Image skipped(greater than 3MB)";
@@ -471,7 +478,7 @@ function xyz_twap_link_publish($post_ID) {
 			}
  		 /* if (strlen($substring)>$tw_max_len)
                 	$substring=substr($substring, 0, $tw_max_len-3)."...";*/
-
+			$tw_publish_status='';
  				 if($xyz_twap_tw_app_sel_mode==0)
 					{
 						$twobj = new Abraham\TwitterOAuth\TwitterOAuth(
@@ -482,11 +489,29 @@ function xyz_twap_link_publish($post_ID) {
 								 );
 								 $twobj->userId = explode('-', $taccess_token)[0];
 								 $twobj->setApiVersion('2');
-
-					}
-			$tw_publish_status='';
-			if($image_found==1 && $post_twitter_image_permission==1 && $xyz_twap_tw_app_sel_mode==0)
+			}
+			elseif($xyz_twap_tw_app_sel_mode==2)
 			{
+				require_once (dirname(__FILE__) . '/../api/twitter.php');
+				// Re-authenticate if 2 hours have passed since the last authorization
+				$reauth_err=0;
+				$current_time=time();
+				$last_auth_time = get_option('xyz_twap_last_auth_time'); 
+				$auth_timer = (2 * 60 * 60) - (2 * 60);
+				 if ((time() - $last_auth_time) >= $auth_timer)
+				 {
+					$response=xyz_twap_twitter_auth2_reauth();
+					if(isset($response['status']) && $response['status']=='error'){
+						$reauth_err=1;
+						$tw_publish_status_insert=serialize("<span style=\"color:red\">".$response['code'].':'.$response['message'].".</span>");
+					}
+					$tauthToken = get_option('xyz_twap_tw_token');
+					}
+			}
+			
+			if($image_found==1 && $post_twitter_image_permission==1)
+			{
+				if($xyz_twap_tw_app_sel_mode==0){
 				$twobj->setTimeouts( 10, 60 );
 				$twobj->setApiVersion( '1.1' );
 				$response = $twobj->upload( 'media/upload', array( 'media' => $xyz_twap_image_files ) );
@@ -523,7 +548,6 @@ function xyz_twap_link_publish($post_ID) {
 				if($img_status!="")
 					$tw_publish_status.="<span style=\"color:red\">".$img_status.".</span>";
 					
-				$tw_api_count++;
 				}
 				else
 				{
@@ -532,6 +556,26 @@ function xyz_twap_link_publish($post_ID) {
 				if (is_file($xyz_twap_image_files) === true)
        				 {
          			    unlink($xyz_twap_image_files);
+				}
+			}
+				elseif($xyz_twap_tw_app_sel_mode==2 && $reauth_err!=1){
+					$response=xyz_twap_upload_media($tauthToken,$attachmenturl,$img_size_bytes);
+					if($response['status']=='error'){
+						$tw_publish_status="<span style=\"color:red\">".$response['code'].':'.$response['message'].".</span>";
+					}
+					elseif (isset($response['status']) && $response['status'] === 'success' && !empty($response['data'])) 
+					{
+						$mediaId=$response['data']['id'];
+						$response=xyz_twap_create_post($tauthToken,$mediaId,$substring);
+						if($response['status']=='error'){
+							$tw_publish_status="<span style=\"color:red\">".$response['code'].':'.$response['message'].".</span>";
+						}
+						else{
+							// $tweet_id=$response['data']['id'];
+							$tw_publish_status="<span style=\"color:green\">statuses/update : Success.</span>";
+						}
+						if($img_status!="")						$tw_publish_status.="<span style=\"color:red\">".$img_status.".</span>";
+					}
 				}
 			}
 			else
@@ -562,8 +606,16 @@ function xyz_twap_link_publish($post_ID) {
     					else
 									$tw_publish_status="<span style=\"color:red\">Not Available</span>";
     				}
-
-							$tw_api_count++;
+			     }
+				elseif($xyz_twap_tw_app_sel_mode==2  && $reauth_err!=1){
+					$response=xyz_twap_post_to_twitter($tauthToken,$substring);
+				if($response['status']=='error'){
+					$tw_publish_status="<span style=\"color:red\">".$response['code'].':'.$response['message'].".</span>";
+				}
+				else{
+					$tweet_id=$response['data']['id'];
+					$tw_publish_status="<span style=\"color:green\">statuses/update : Success.</span>";
+				}
 			     }
 			}
 			$tweet_id_string='';
@@ -576,9 +628,17 @@ if(isset($resultfrtw->data))
     				$tweet_link="https://twitter.com/".$twid."/status/".$resp->id;
     				$tweet_id_string="<br/><span style=\"color:#21759B;text-decoration:underline;\"><a target=\"_blank\" href=".$tweet_link.">View Tweet</a></span>";
     					
-
+    			}    			
+    			$tw_publish_status_insert=serialize($tw_publish_status.$tweet_id_string);
     			}
-    			
+			elseif ($xyz_twap_tw_app_sel_mode==2  && $reauth_err!=1)
+			{
+				if(isset($response['data']))
+					$resp = $response['data'];
+				if (isset($resp['id']) && !empty($resp['id'])){
+					$tweet_link="https://twitter.com/".$twid."/status/".$resp['id'];
+					$tweet_id_string="<br/><span style=\"color:#21759B;text-decoration:underline;\"><a target=\"_blank\" href=".$tweet_link.">View Tweet</a></span>";
+				}
     			$tw_publish_status_insert=serialize($tw_publish_status.$tweet_id_string);
 	       	}
 
@@ -656,5 +716,3 @@ if(isset($resultfrtw->data))
 	$_POST=$_POST_CPY;
 
 }
-
-?>

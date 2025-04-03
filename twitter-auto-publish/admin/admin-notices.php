@@ -42,14 +42,14 @@ $xyz_twap_notice = wp_nonce_url($xyz_twap_notice,'twap-shw');
 	   echo $twap_thanks_msg; ?></p>
 	   
 	<p>
-	<a href="https://wordpress.org/support/plugin/twitter-auto-publish/reviews" class="button xyz_rate_btn" target="_blank"> <?php _e('Rate it 5★\'s on wordpress','twitter-auto-publish'); ?></a>
+	<a href="https://wordpress.org/support/plugin/twitter-auto-publish/reviews" class="button xyz_twap_rate_btn" target="_blank"> <?php _e('Rate it 5★\'s on wordpress','twitter-auto-publish'); ?></a>
 	<?php if(get_option('xyz_credit_link')=="0") ?>
-	    <a href="<?php echo $xyz_twap_link; ?>"class="button xyz_backlink_btn xyz_blink"> <?php _e('Enable Backlink','twitter-auto-publish'); ?> </a>
+	    <a href="<?php echo $xyz_twap_link; ?>"class="button xyz_twap_backlink_btn xyz_blink"> <?php _e('Enable Backlink','twitter-auto-publish'); ?> </a>
 	    
-	<a class="button xyz_share_btn" onclick=xyz_twap_shareon_tckbox();> <?php _e('Share on','twitter-auto-publish'); ?> </a>
-		<a href="https://xyzscripts.com/donate/5" class="button xyz_donate_btn" target="_blank"> <?php _e('Donate','twitter-auto-publish'); ?> </a>
+	<a class="button xyz_twap_share_btn" onclick=xyz_twap_shareon_tckbox();> <?php _e('Share on','twitter-auto-publish'); ?> </a>
+		<a href="https://xyzscripts.com/donate/5" class="button xyz_twap_donate_btn" target="_blank"> <?php _e('Donate','twitter-auto-publish'); ?> </a>
 	
-	<a href="<?php echo $xyz_twap_notice; ?>" class="button xyz_show_btn"> <?php _e('Don\'t Show This Again','twitter-auto-publish'); ?></a>
+	<a href="<?php echo $xyz_twap_notice; ?>" class="button xyz_twap_show_btn"> <?php _e('Don\'t Show This Again','twitter-auto-publish'); ?></a>
 	</p>
 	
 	<div id="show_share_icons_tw" style="display: none;">
