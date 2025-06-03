@@ -41,6 +41,25 @@ if(!function_exists('xyz_twap_plugin_get_version'))
 	}
 }
 
+if(!function_exists('xyz_twap_run_upgrade_routines'))
+{
+function xyz_twap_run_upgrade_routines() {
+	global $wpdb;
+	if (is_multisite()) {
+		$blog_ids = $wpdb->get_col("SELECT blog_id FROM $wpdb->blogs");
+		foreach ($blog_ids as $blog_id) {
+			switch_to_blog($blog_id);
+			// Run install logic for each site
+			twap_install_free();
+			// Clear any relevant caches (example: object cache)
+			restore_current_blog();
+		}
+	} else {
+		// Single site: just run install and cache clear
+		twap_install_free();
+	}
+}
+}
 
 if(!function_exists('xyz_twap_links')){
 	function xyz_twap_links($links, $file) {

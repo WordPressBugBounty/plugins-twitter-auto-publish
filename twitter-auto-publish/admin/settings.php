@@ -480,7 +480,7 @@ if($xyz_twap_app_sel_mode==2)
 		<option value ="8">{POST_PUBLISH_DATE} </option>
 		<option value ="9">{USER_DISPLAY_NAME} </option>
 		</select> </td></tr><tr><td>&nbsp;</td><td>
-		<textarea id="xyz_twap_twmessage"  name="xyz_twap_twmessage" style="height:80px !important;" ><?php if($tms6=="") {
+		<textarea id="xyz_twap_twmessage"  name="xyz_twap_twmessage"><?php if($tms6=="") {
 								echo esc_textarea(get_option('xyz_twap_twmessage'));}?></textarea>
 	</td></tr>
 						

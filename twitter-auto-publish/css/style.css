@@ -224,7 +224,7 @@ a.xyz_twap_link:hover{text-decoration:underline;}
 }
 .xyz_twap_widefat_table textarea
 {
-width: 200px;padding: 5px !important;height: 80px !important;
+padding: 5px !important;min-height: 80px !important;min-width: 200px !important;resize:auto !important;
 }
 
 
@@ -243,8 +243,11 @@ width: 100%;
 .xyz_twap_meta_acclist_table_td{
 	background: linear-gradient(to top, #ECECEC, #F9F9F9) repeat scroll 0 0 #F1F1F1;border-bottom: 1px solid #DFDFDF;height: 25px;
 }
-.xyz_twap_meta_acclist_table select ,.xyz_twap_meta_acclist_table textarea{
+.xyz_twap_meta_acclist_table select{
     width: 200px;padding: 3px !important;height: 2.35em !important;
+}
+.xyz_twap_meta_acclist_table textarea{
+    padding: 3px !important;min-height: 80px !important;min-width: 200px !important;resize:auto !important;
 }
 a {
 	text-decoration: none;

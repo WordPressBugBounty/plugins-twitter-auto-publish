@@ -346,7 +346,7 @@ if (((get_option('xyz_twap_default_selection_edit')==2 && isset($GLOBALS['edit_f
 		</select> </td></tr>
 		
 		<tr id="twmftarea_twap"><td>&nbsp;</td><td>
-		<textarea id="xyz_twap_twmessage"  name="xyz_twap_twmessage" style="height:80px !important;" ><?php echo esc_textarea($messagetopost);?></textarea>
+		<textarea id="xyz_twap_twmessage"  name="xyz_twap_twmessage"><?php echo esc_textarea($messagetopost);?></textarea>
 	</td></tr>
 	
 	</table>

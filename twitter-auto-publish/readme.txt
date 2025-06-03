@@ -3,8 +3,8 @@ Contributors: f1logic
 Donate link: https://xyzscripts.com/donate/
 Tags:  twitter, wp twitter auto publish, twitter auto publish, publish post to twitter, add link to twitter, twitter publishing, post to twitter, social media auto publish, social media publishing, social network auto publish, social media, social network
 Requires at least: 3.0
-Tested up to: 6.7.2
-Stable tag: 1.7
+Tested up to: 6.8.1
+Stable tag: 1.7.1
 License: GPLv2 or later
 
 Publish posts automatically to Twitter.
@@ -121,9 +121,13 @@ SSL peer verification may not be functioning in your server. Please turn off SSL
 
 == Changelog ==
 
+= WP Twitter Auto Publish 1.7.1 =
+* Added version check to trigger DB updates and clear cache on updates
+* Compatibility with latest version of WordPress
+
 = WP Twitter Auto Publish 1.7 =
 * Twitter API v2 Endpoint Integration
-* Improved compatibility with PHP and WordPress
+* Improved compatibility with PHP & WordPress
 * Updated footer layout and fixed responsiveness issues
 * Updated features list to reflect new premium plugin features
 
