@@ -213,7 +213,7 @@ function dethide_twap(id)
 <div style="width: 100%">
 
 <div class="xyz_twap_tab">
-  <button class="xyz_twap_tablinks" onclick="xyz_twap_open_tab(event, 'xyz_twap_twitter_settings')" id="xyz_twap_default_tab_settings"><?php esc_html_e('Twitter Settings','twitter-auto-publish');?></button>
+  <button class="xyz_twap_tablinks" onclick="xyz_twap_open_tab(event, 'xyz_twap_twitter_settings')" id="xyz_twap_default_tab_settings"><?php esc_html_e('Twitter / X Settings','twitter-auto-publish');?></button>
    <button class="xyz_twap_tablinks" onclick="xyz_twap_open_tab(event, 'xyz_twap_basic_settings')" id="xyz_twap_basic_tab_settings"><?php esc_html_e('General Settings','twitter-auto-publish');?></button>
 </div>
 <div id="xyz_twap_twitter_settings" class="xyz_twap_tabcontent">
@@ -227,7 +227,7 @@ function dethide_twap(id)
 	<?php	
 	printf(
 		__('%sClick here%s to create a new application.', 'twitter-auto-publish'),
-		'<b><a href="https://developer.twitter.com/en/portal/projects-and-apps" target="_blank">',
+		'<b><a href="https://developer.x.com/en/portal/projects-and-apps" target="_blank">',
 		'</a></b>'
 	);
 		$twap_path1="Settings > User authentication settings > Edit";
@@ -250,7 +250,7 @@ function dethide_twap(id)
 		<b><?php esc_html_e('Note:','twitter-auto-publish');?></b> <?php esc_html_e('You have to create a Twitter application before filling in following fields.','twitter-auto-publish');?> 	
 		<?php printf(
     __('%s Click here %s to create a new application.', 'twitter-auto-publish'),
-    '<b><a href="https://developer.twitter.com/en/portal/projects-and-apps" target="_blank">',
+    '<b><a href="https://developer.x.com/en/portal/projects-and-apps" target="_blank">',
     '</a></b>'
 );?>
 		 <br><?php $twap_path1="Settings > User authentication settings > Edit";
@@ -357,10 +357,10 @@ if($xyz_twap_app_sel_mode==2)
 			</td>
 				<td>
 				<input type="radio" name="xyz_twap_app_sel_mode" id="xyz_twap_app_sel_mode_reviewd" value="0" <?php if($xyz_twap_app_sel_mode==0) echo 'checked';?>>
-				<span style="color: #a7a7a7;font-weight: bold;"> <?php esc_html_e('Own App (Traditional: This is for supporting old users) ','twitter-auto-publish'); ?> ,<br/> <span style="padding-left:30px;"> <?php esc_html_e(' We advise switching to OAuth 2.0) ','twitter-auto-publish'); ?></span> <a href="http://help.xyzscripts.com/docs/social-media-auto-publish/faq/how-can-i-create-twitter-application/" style="color: #a7a7a7;text-decoration: underline; " target="_blank" > <?php esc_html_e('Help','twitter-auto-publish'); ?> </a></span>
+				<span style="color: #a7a7a7;font-weight: bold;"> <?php esc_html_e('Own App- Traditional (Deprecating soon. Use OAuth 2.0) ','twitter-auto-publish'); ?><br/>
 				<br>
 				<input type="radio" name="xyz_twap_app_sel_mode" id="xyz_twap_app_sel_mode_reviewd" value="2" <?php if($xyz_twap_app_sel_mode==2) echo 'checked';?>>
-				<span style="color: #a7a7a7;font-weight: bold;"> <?php esc_html_e('Own App (OAuth2.0 :Recommended)','twitter-auto-publish'); ?><a href="http://help.xyzscripts.com/docs/social-media-auto-publish/faq/how-can-i-create-twitter-application/" style="color: #a7a7a7;text-decoration: underline; " target="_blank" > <?php esc_html_e('Help','twitter-auto-publish'); ?> </a></span>
+				<span style="color: #a7a7a7;font-weight: bold;"> <?php esc_html_e('Own App (OAuth2.0 :Recommended)','twitter-auto-publish'); ?></span>
 
 
 	<?php if(get_option('xyz_twap_smapsoln_userid')==1) {?>

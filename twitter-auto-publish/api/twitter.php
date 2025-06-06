@@ -9,7 +9,7 @@ if(!function_exists('xyz_twap_twitter_auth2_reauth'))
     $current_time=time();
     $auth_header = base64_encode("$client_id:$client_secret");
 
-    $response = wp_remote_post('https://api.twitter.com/2/oauth2/token', [
+    $response = wp_remote_post(XYZ_TWAP_API_OAUTH2_URL."oauth2/token", [
         'headers' => [
             'Content-Type'  => 'application/x-www-form-urlencoded',
             'Authorization' => 'Basic ' . $auth_header,
@@ -56,7 +56,7 @@ if(!function_exists('xyz_twap_twitter_auth2_reauth'))
 if(!function_exists('xyz_twap_post_to_twitter'))
 {
     function xyz_twap_post_to_twitter($bearer_token,$message) {
-        $url = 'https://api.x.com/2/tweets';
+        $url = XYZ_TWAP_API_OAUTH2_URL."tweets";
         $headers = array(
             'Authorization' => 'Bearer ' . $bearer_token,
             'Content-Type'  => 'application/json',
@@ -104,9 +104,9 @@ if(!function_exists('xyz_twap_post_to_twitter'))
 ///////////////Upload media/////////////////
 if(!function_exists('xyz_twap_upload_media'))
 {
-    function xyz_twap_upload_media($authToken,$filePath,$fileSize) {
+    function xyz_twap_upload_media($authToken,$filePath) {
     /////////////////////image upload///////////////////////
-    $url = 'https://api.x.com/2/media/upload';
+    $url = XYZ_TWAP_API_OAUTH2_URL."media/upload";
 
         // Open file and get contents
         $fileName = basename($filePath);
@@ -136,8 +136,8 @@ if(!function_exists('xyz_twap_upload_media'))
         // Prepare the form fields with multipart
         $boundary = wp_generate_password(24, false);
         $body = "--{$boundary}\r\n";
-        $body .= "Content-Disposition: form-data; name=\"total_bytes\"\r\n\r\n{$fileSize}\r\n";
-        $body .= "--{$boundary}\r\n";
+        // $body .= "Content-Disposition: form-data; name=\"total_bytes\"\r\n\r\n{$fileSize}\r\n";
+        // $body .= "--{$boundary}\r\n";
         $body .= "Content-Disposition: form-data; name=\"media_type\"\r\n\r\n{$mimeType}\r\n";
         $body .= "--{$boundary}\r\n";
         $body .= "Content-Disposition: form-data; name=\"media_category\"\r\n\r\ntweet_image\r\n";
@@ -170,7 +170,7 @@ if(!function_exists('xyz_twap_upload_media'))
         }
         $body = wp_remote_retrieve_body($response);
         $response_data = json_decode($body, true);
-        $media_id = $response_data['id'] ?? null;
+        $media_id = $response_data['data']['id'] ?? null;
         $http_code = $response['response']['code'];
         $http_message = $response['response']['message'];
         if ($http_code === 200 && !empty($response_data)) {
@@ -194,7 +194,7 @@ if(!function_exists('xyz_twap_upload_media'))
 if(!function_exists('xyz_twap_create_post'))
 {
     function xyz_twap_create_post($authToken,$mediaId,$message){
-    $url = 'https://api.x.com/2/tweets';
+    $url = XYZ_TWAP_API_OAUTH2_URL."tweets";
         // Prepare the payload
         $payload = [
             'text' => $message,
@@ -215,7 +215,7 @@ if(!function_exists('xyz_twap_create_post'))
             'timeout'   => 30,
             'sslverify' => get_option('xyz_twap_peer_verification') == '1',
         ];
-        $response = wp_remote_post($url, $args);//return($response);
+        $response = wp_remote_post($url, $args);
     if (is_wp_error($response)) {
         return [
             'status'  => 'error',

@@ -625,7 +625,7 @@ if(isset($resultfrtw->data))
 
     			$resp = $resultfrtw->data;
     		if (isset($resp->id) && !empty($resp->id)){
-    				$tweet_link="https://twitter.com/".$twid."/status/".$resp->id;
+    				$tweet_link="https://x.com/".$twid."/status/".$resp->id;
     				$tweet_id_string="<br/><span style=\"color:#21759B;text-decoration:underline;\"><a target=\"_blank\" href=".$tweet_link.">View Tweet</a></span>";
     					
     			}    			
@@ -636,7 +636,7 @@ if(isset($resultfrtw->data))
 				if(isset($response['data']))
 					$resp = $response['data'];
 				if (isset($resp['id']) && !empty($resp['id'])){
-					$tweet_link="https://twitter.com/".$twid."/status/".$resp['id'];
+					$tweet_link="https://x.com/".$twid."/status/".$resp['id'];
 					$tweet_id_string="<br/><span style=\"color:#21759B;text-decoration:underline;\"><a target=\"_blank\" href=".$tweet_link.">View Tweet</a></span>";
 				}
     			$tw_publish_status_insert=serialize($tw_publish_status.$tweet_id_string);

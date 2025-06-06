@@ -43,7 +43,7 @@ if(get_option('xyz_twap_premium_version_ads')==1){?>
 <div class="xyz_twap_social_media">
 <h3 class="xyz_twap_inner_head"><?php _e('Follow Us','twitter-auto-publish'); ?> </h3>
    <a target="_blank" href="http://facebook.com/xyzscripts" class="xyz_twap_home_fbook"></a>
-   <a target="_blank" href="http://twitter.com/xyzscripts" class="xyz_twap_home_twitt"></a>
+   <a target="_blank" href="http://x.com/xyzscripts" class="xyz_twap_home_twitt"></a>
         <a target="_blank" href="https://www.instagram.com/xyz_scripts/" class="xyz_twap_home_insta"></a>
  <a style="margin-right:0px;" target="_blank" href="https://www.linkedin.com/company/xyzscripts" class="xyz_twap_home_linkedin"></a>
 </div>

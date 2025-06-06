@@ -54,7 +54,7 @@ $xyz_twap_notice = wp_nonce_url($xyz_twap_notice,'twap-shw');
 	
 	<div id="show_share_icons_tw" style="display: none;">
 	<a class="button" style="background-color:#3b5998;color:white;margin-right:4px;margin-left:100px;margin-top: 25px;" href="http://www.facebook.com/sharer/sharer.php?u=https://xyzscripts.com/wordpress-plugins/twitter-auto-publish/" target="_blank"> <?php _e('Facebook','twitter-auto-publish'); ?> </a>
-	<a class="button" style="background-color:#00aced;color:white;margin-right:4px;margin-left:20px;margin-top: 25px;" href="http://twitter.com/share?url=https://xyzscripts.com/wordpress-plugins/twitter-auto-publish/&text='.$sharelink_text_tw.'" target="_blank"> <?php _e('Twitter','twitter-auto-publish'); ?> </a>
+	<a class="button" style="background-color:#00aced;color:white;margin-right:4px;margin-left:20px;margin-top: 25px;" href="http://x.com/share?url=https://xyzscripts.com/wordpress-plugins/twitter-auto-publish/&text='.$sharelink_text_tw.'" target="_blank"> <?php _e('Twitter','twitter-auto-publish'); ?> </a>
 	<a class="button" style="background-color:#007bb6;color:white;margin-right:4px;margin-left:20px;margin-top: 25px;" href="http://www.linkedin.com/shareArticle?mini=true&url=https://xyzscripts.com/wordpress-plugins/twitter-auto-publish/" target="_blank"> <?php _e('LinkedIn','twitter-auto-publish'); ?> </a>
 	</div>
 	<?php echo '</div>';
