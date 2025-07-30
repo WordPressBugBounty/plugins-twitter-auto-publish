@@ -107,7 +107,7 @@ $twap_pub_msg=sprintf( __('%s automatically publishes posts from your blog to yo
 
 	<!-- Posting Options  -->
 	<tr>
-		<td rowspan="17"><h4><?php _e('Posting Options','twitter-auto-publish');?></h4></td>
+		<td rowspan="18"><h4><?php _e('Posting Options','twitter-auto-publish');?></h4></td>
 		<td><?php _e('Publish to facebook pages','twitter-auto-publish');?></td>
 		<td><img src="<?php echo plugins_url("images/cross.png",XYZ_TWAP_PLUGIN_FILE);?>">
 		</td>
@@ -273,7 +273,15 @@ $twap_pub_msg=sprintf( __('%s automatically publishes posts from your blog to yo
 		<td><img src="<?php echo plugins_url("images/tick.png",XYZ_TWAP_PLUGIN_FILE);?>">
 		</td>
 	</tr>
-
+<tr>
+		<td> <?php _e('Carousel post support for Instagram and Telegram','social-media-auto-publish'); ?> </td>
+		<td><img src="<?php echo plugins_url("images/cross.png",XYZ_SMAP_PLUGIN_FILE);?>">
+		</td>
+		<td><img src="<?php echo plugins_url("images/tick.png",XYZ_SMAP_PLUGIN_FILE);?>">
+		</td>
+		<td><img src="<?php echo plugins_url("images/tick.png",XYZ_SMAP_PLUGIN_FILE);?>">
+		</td>
+	</tr>
 	<!-- Image Options  -->
 
 	<tr>

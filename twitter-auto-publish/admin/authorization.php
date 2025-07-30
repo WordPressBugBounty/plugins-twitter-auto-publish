@@ -79,14 +79,15 @@ if (isset($_COOKIE['xyz_twap_session_state']) && isset($_REQUEST['state']) && ($
             update_option('xyz_twap_tw_refresh_token', $refresh_token);
             update_option('xyz_twap_last_auth_time', $current_time);
             update_option('xyz_twap_tw_af', 0);
-            header("Location:" . admin_url('admin.php?page=twitter-auto-publish-settings&auth=1&msg=2'));
+            wp_safe_redirect( admin_url( 'admin.php?page=twitter-auto-publish-settings&auth=1&msg=2' ) );
             exit;
         } else {
             $error='Error:';
             if (isset($params->error)) {
                 $error.= $params->error;
             }
-            header("Location:" . admin_url('admin.php?page=twitter-auto-publish-settings&error_msg='.urlencode($error)));
+            $error = isset( $error ) ? sanitize_text_field( $error ) : '';
+            wp_safe_redirect( admin_url( 'admin.php?page=twitter-auto-publish-settings&error_msg=' . urlencode( $error ) ) );
             exit;
         }
     }

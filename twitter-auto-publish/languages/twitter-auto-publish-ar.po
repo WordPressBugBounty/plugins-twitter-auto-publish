@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: multilang\n"
-"POT-Creation-Date: 2025-06-06 17:34+0530\n"
-"PO-Revision-Date: 2025-06-06 17:35+0530\n"
+"POT-Creation-Date: 2025-07-29 11:43+0530\n"
+"PO-Revision-Date: 2025-07-29 15:37+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ar\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: _e;__;esc_html_e;_X\n"
 "X-Poedit-SearchPath-0: admin/about.php\n"
@@ -38,8 +38,8 @@ msgid ""
 "allows you to filter posts based on post-types and categories. %s is "
 "developed and maintained by"
 msgstr ""
-"ينشر% s تلقائيًا منشورات من مدونتك على صفحات Twitter الخاصة بك. يسمح لك بتصفية "
-"المنشورات بناءً على أنواع المنشورات والفئات. تم تطوير% s وصيانته بواسطة"
+"يقوم %s تلقائيًا بنشر المشاركات من مدونتك إلى صفحات Twitter الخاصة بك. يسمح لك "
+"بتصفية المشاركات بناءً على أنواع المنشورات والفئات. تم تطوير %s وصيانته بواسطة"
 
 #: admin/about.php:17
 #, php-format
@@ -49,8 +49,8 @@ msgid ""
 "included a quick comparison of the free and premium plugins for your "
 "reference."
 msgstr ""
-"إذا كنت ترغب في الحصول على المزيد من الميزات ، فيرجى تجربة <a href=\"%s\" "
-"target=\"_blank\">% s </a> وهو إصدار متميز من هذا المكون الإضافي. لقد قمنا "
+"إذا كنت ترغب في الحصول على المزيد من الميزات، يرجى تجربة <a href=“%s” "
+"target=“_blank”>%s</a> وهو إصدار متميز من هذا البرنامج الإضافي. لقد قمنا "
 "بتضمين مقارنة سريعة للمكونات الإضافية المجانية والمتميزة للرجوع إليها."
 
 #: admin/about.php:24
@@ -72,7 +72,7 @@ msgstr "الممتازة"
 #: admin/about.php:30
 #, php-format
 msgid "%s Premium"
-msgstr "% s قسط"
+msgstr "‫%s بريميوم"
 
 #: admin/about.php:35
 msgid "Supported Media"
@@ -186,20 +186,24 @@ msgstr "خيار استخدام فئات المنشورات كعلامات تص�
 msgid "Enable/Disable SSL peer verification"
 msgstr "تمكين / تعطيل التحقق من الأقران SSL"
 
-#: admin/about.php:281
+#: admin/about.php:278
+msgid "Carousel post support for Instagram and Telegram"
+msgstr "دعم النشر الدائري لـ Instagram وTelegram"
+
+#: admin/about.php:289
 msgid "Image Options"
 msgstr "خيارات الصورة"
 
-#: admin/about.php:282
+#: admin/about.php:290
 msgid "Publish images along with post content"
 msgstr "نشر الصور مع محتوى آخر"
 
-#: admin/about.php:293
+#: admin/about.php:301
 msgid ""
 "Separate default image url for publishing to multiple social media accounts"
 msgstr "عنوان url افتراضي منفصل للصورة للنشر على حسابات وسائط اجتماعية متعددة"
 
-#: admin/about.php:303
+#: admin/about.php:311
 msgid ""
 "Option to specify preference from featured image, post content, post meta and "
 "open graph tags"
@@ -207,38 +211,38 @@ msgstr ""
 "خيار لتحديد التفضيل من الصورة المميزة ومحتوى المنشور ونشر التعريف وفتح علامات "
 "الرسم البياني"
 
-#: admin/about.php:313
+#: admin/about.php:321
 msgid ""
 "Publish multiple images to facebook, tumblr, linkedin, twitter, threads and "
 "telegram along with post content\t"
 msgstr "انشر صورًا متعددة على فيسبوك و تمبلر و ينكدين و تويتر مع محتوى المنشور "
 
-#: admin/about.php:323
+#: admin/about.php:331
 msgid "Option to specify multiphoto preference from post content and post meta"
 msgstr "خيار لتحديد تفضيل متعدد الصور من محتوى المنشور ونشر التعريف"
 
-#: admin/about.php:335
+#: admin/about.php:343
 msgid "Video/Audio Options"
 msgstr "خيارات الفيديو / الصوت"
 
-#: admin/about.php:336
+#: admin/about.php:344
 msgid ""
 "Publish video to facebook, tumblr,Linkedin, Instagram, twitter, threads and "
 "telegram along with post content"
 msgstr ""
 "انشر الفيديو على فيسبوك و نعرفكم و ينكدين و الانستغرام و تويتر مع محتوى النشر"
 
-#: admin/about.php:346
+#: admin/about.php:354
 msgid ""
 "Option to specify preference from post content, post meta and open graph tags"
 msgstr ""
 "خيار لتحديد التفضيل من محتوى المنشور ونشر التعريف وفتح علامات الرسم البياني"
 
-#: admin/about.php:356
+#: admin/about.php:364
 msgid "Publish audio to tumblr along with post content"
 msgstr "انشر الصوت إلى نعرفكم جنبًا إلى جنب مع محتوى النشر"
 
-#: admin/about.php:365
+#: admin/about.php:373
 msgid ""
 "Option to specify audio preference from  post content, post meta and open "
 "graph tags"
@@ -246,143 +250,143 @@ msgstr ""
 "خيار لتحديد تفضيلات الصوت من محتوى المنشور ونشر التعريف وفتح علامات الرسم "
 "البياني"
 
-#: admin/about.php:376
+#: admin/about.php:384
 msgid "Filter Options"
 msgstr "خيارات التصفية"
 
-#: admin/about.php:377
+#: admin/about.php:385
 msgid "Filter posts to publish based on categories"
 msgstr "تصفية المشاركات للنشر على أساس الفئات"
 
-#: admin/about.php:387
+#: admin/about.php:395
 msgid "Filter posts to publish based on custom post types"
 msgstr "تصفية المشاركات للنشر على أساس أنواع المنشورات المخصصة"
 
-#: admin/about.php:396
+#: admin/about.php:404
 msgid "Filter posts to publish based on sticky posts"
 msgstr "تصفية المشاركات للنشر على أساس المنشورات اللاصقة"
 
-#: admin/about.php:405
+#: admin/about.php:413
 msgid "Configuration to enable/disable page publishing"
 msgstr "التكوين لتمكين / تعطيل نشر الصفحة"
 
-#: admin/about.php:415
+#: admin/about.php:423
 msgid "Category filter for individual accounts"
 msgstr "مرشح الفئات للحسابات الفردية"
 
-#: admin/about.php:425
+#: admin/about.php:433
 msgid "Custom post type filter for individual accounts"
 msgstr "عامل تصفية نوع المنشور المخصص للحسابات الفردية"
 
-#: admin/about.php:435
+#: admin/about.php:443
 msgid "Enable/Disable page publishing for individual accounts"
 msgstr "تمكين / تعطيل نشر الصفحة للحسابات الفردية"
 
-#: admin/about.php:445
+#: admin/about.php:453
 msgid "Override auto publish scheduling for individual accounts"
 msgstr "تجاوز جدولة النشر التلقائي للحسابات الفردية"
 
-#: admin/about.php:454
+#: admin/about.php:462
 msgid "Override auto publish based on sticky posts for individual accounts"
 msgstr "تجاوز النشر التلقائي بناءً على المنشورات الثابتة للحسابات الفردية"
 
-#: admin/about.php:465
+#: admin/about.php:473
 msgid "Scheduling"
 msgstr "الجدولة"
 
-#: admin/about.php:466
+#: admin/about.php:474
 msgid "Instantaneous post publishing"
 msgstr "النشر الفوري"
 
-#: admin/about.php:476
+#: admin/about.php:484
 msgid "Scheduled post publishing using cron"
 msgstr "نشر المنشور المجدول باستخدام cron"
 
-#: admin/about.php:486
+#: admin/about.php:494
 msgid "Status summary of auto publish tasks by mail"
 msgstr "ملخص حالة مهام النشر التلقائي عن طريق البريد"
 
-#: admin/about.php:496
+#: admin/about.php:504
 msgid "Configurable auto publishing time interval"
 msgstr "الفاصل الزمني للنشر التلقائي القابل للتكوين"
 
-#: admin/about.php:510
+#: admin/about.php:518
 msgid "Publishing History"
 msgstr "تاريخ النشر"
 
-#: admin/about.php:511
+#: admin/about.php:519
 msgid "View auto publish history"
 msgstr "عرض محفوظات النشر التلقائي"
 
-#: admin/about.php:520
+#: admin/about.php:528
 msgid "View auto publish error logs"
 msgstr "عرض سجلات خطأ النشر التلقائي"
 
-#: admin/about.php:530
+#: admin/about.php:538
 msgid "Option to republish post"
 msgstr "خيار إعادة نشر آخر"
 
-#: admin/about.php:540
+#: admin/about.php:548
 msgid "Option to reschedule publishing"
 msgstr "خيار إعادة جدولة النشر"
 
-#: admin/about.php:551
+#: admin/about.php:559
 msgid "Installation and Support"
 msgstr "التثبيت والدعم"
 
-#: admin/about.php:552
+#: admin/about.php:560
 msgid "Free Installation"
 msgstr "تركيب مجاني"
 
-#: admin/about.php:561
+#: admin/about.php:569
 msgid "Privilege customer support"
 msgstr "امتياز دعم العملاء"
 
-#: admin/about.php:572
+#: admin/about.php:580
 msgid "Addon Features"
 msgstr "ميزات الملحق"
 
-#: admin/about.php:573
+#: admin/about.php:581
 msgid "Advanced Autopublish Scheduler"
 msgstr "جدولة النشر التلقائي المتقدمة"
 
-#: admin/about.php:582
+#: admin/about.php:590
 msgid "URL-Shortener"
 msgstr "URL- shortener"
 
-#: admin/about.php:591
+#: admin/about.php:599
 msgid "Privilege Management"
 msgstr "إدارة الامتياز"
 
-#: admin/about.php:600
+#: admin/about.php:608
 msgid "Other"
 msgstr "آخر"
 
-#: admin/about.php:601
+#: admin/about.php:609
 msgid "Price"
 msgstr "سعر"
 
-#: admin/about.php:602
+#: admin/about.php:610
 msgid "FREE"
 msgstr "مجانيا"
 
-#: admin/about.php:603
+#: admin/about.php:611
 msgid "Starts from 29 USD"
 msgstr "يبدأ من 29 دولارًا أمريكيًا"
 
-#: admin/about.php:604
+#: admin/about.php:612
 msgid "Starts from 59 USD"
 msgstr "يبدأ من 59 دولارًا أمريكيًا"
 
-#: admin/about.php:607
+#: admin/about.php:615
 msgid "Purchase"
 msgstr "شراء"
 
-#: admin/about.php:609 admin/footer.php:27
+#: admin/about.php:617 admin/footer.php:27
 msgid "Buy Now"
 msgstr "اشتري الآن"
 
-#: admin/about.php:616
+#: admin/about.php:624
 msgid "Pinterest is added on experimental basis."
 msgstr "تمت إضافة بينتيريست على أساس تجريبي."
 
@@ -550,12 +554,12 @@ msgstr "لم يتم العثور على سجلات"
 #: admin/manage-auth.php:7
 #, php-format
 msgid "%s Package updated successfully."
-msgstr "تم تحديث حزمة% s بنجاح."
+msgstr "تم تحديث حزمة %s بنجاح."
 
 #: admin/manage-auth.php:25
 #, php-format
 msgid "Please authorize %s app under Twitter settings to access this page."
-msgstr "الرجاء تفويض تطبيق% s ضمن إعدادات Twitter للوصول إلى هذه الصفحة."
+msgstr "يرجى السماح لتطبيق %s ضمن إعدادات تويتر بالدخول إلى هذه الصفحة."
 
 #: admin/manage-auth.php:255 admin/menu.php:32
 msgid "Manage Authorizations"
@@ -612,7 +616,7 @@ msgstr "مجموعات مختارة"
 #: admin/manage-auth.php:313
 #, php-format
 msgid "%s url"
-msgstr "% s url"
+msgstr "عنوان URL %s"
 
 #: admin/manage-auth.php:315
 msgid "Plugin"
@@ -621,7 +625,7 @@ msgstr "توصيل في"
 #: admin/manage-auth.php:316
 #, php-format
 msgid "Account ID %s"
-msgstr "معرف الحساب% s"
+msgstr "معرف الحساب %s"
 
 #: admin/manage-auth.php:318
 msgid "Action"
@@ -662,17 +666,17 @@ msgstr "ليس لديك أذونات كافية"
 #: admin/menu.php:16
 #, php-format
 msgid "Account details successfully deleted from %s"
-msgstr "تم حذف تفاصيل الحساب بنجاح من% s"
+msgstr "تم حذف تفاصيل الحساب بنجاح من %s"
 
 #: admin/menu.php:17
 #, php-format
 msgid "In-active Twitter account successfully deleted from %s"
-msgstr "تم حذف حساب Twitter غير النشط بنجاح من% s"
+msgstr "تم حذف حساب Twitter غير النشط بنجاح من %s"
 
 #: admin/menu.php:18
 #, php-format
 msgid "Please connect your %s member account"
-msgstr "الرجاء الاتصال بحساب عضو% s الخاص بك"
+msgstr "الرجاء ربط حساب العضو %s الخاص بك"
 
 #: admin/menu.php:19
 msgid "Thank you for enabling backlink !"
@@ -799,17 +803,15 @@ msgstr "تم تحديث الإعدادات بنجاح"
 #: admin/settings.php:176
 #, php-format
 msgid "Successfully connected to %s member area"
-msgstr "نجح الاتصال بمنطقة عضو% s"
+msgstr "تم الاتصال بنجاح بمنطقة الأعضاء %s"
 
 #: admin/settings.php:185
 msgid "Account has been authenticated successfully"
 msgstr "تمت مصادقة الحساب بنجاح"
 
 #: admin/settings.php:216
-#, fuzzy
-#| msgid "Twitter Settings"
 msgid "Twitter / X Settings"
-msgstr "إعدادات تغريد"
+msgstr "إعدادات تويتر/X"
 
 #: admin/settings.php:217
 msgid "General Settings"
@@ -832,7 +834,7 @@ msgstr "%sانقر هنا%s لإنشاء تطبيق جديد."
 #: admin/settings.php:234 admin/settings.php:257
 #, php-format
 msgid "In the twitter application, navigate to <b>%s</b>."
-msgstr "في تطبيق twitter ، انتقل إلى <b>% s </b>."
+msgstr "في تطبيق تويتر، انتقل إلى <b>%s</b>."
 
 #: admin/settings.php:237
 #, php-format
@@ -861,7 +863,7 @@ msgstr ""
 #: admin/settings.php:252
 #, php-format
 msgid "%s Click here %s to create a new application."
-msgstr "%s انقر هنا %s لإنشاء تطبيق جديد.  "
+msgstr "‫%s انقر هنا %s لإنشاء تطبيق جديد."
 
 #: admin/settings.php:261
 #, php-format
@@ -902,7 +904,7 @@ msgstr "اختيار التطبيق"
 
 #: admin/settings.php:360
 msgid "Own App- Traditional (Deprecating soon. Use OAuth 2.0) "
-msgstr "تطبيق خاص - تقليدي (سيتم إيقافه قريبًا. استخدم OAuth 2.0)"
+msgstr "التطبيق الخاص - التقليدي (سيتم إيقافه قريبًا. استخدم OAuth 2.0) "
 
 #: admin/settings.php:363
 msgid "Own App (OAuth2.0 :Recommended)"
@@ -911,7 +913,7 @@ msgstr "تطبيق خاص (OAuth2.0: مستحسن)"
 #: admin/settings.php:369
 #, php-format
 msgid "%s App (ready to publish)"
-msgstr "تطبيق% s (جاهز للنشر)"
+msgstr "تطبيق %s (جاهز للنشر)"
 
 #: admin/settings.php:369
 msgid "Starts from 10 USD per year"
@@ -924,12 +926,12 @@ msgstr "يبدأ من 10 دولارات أمريكية سنويًا"
 #: admin/settings.php:377
 #, php-format
 msgid "How to use %s application?"
-msgstr "كيف يتم استخدام تطبيق% s؟"
+msgstr "كيفية استخدام التطبيق %s؟"
 
 #: admin/settings.php:390
 #, php-format
 msgid "Connect your %s account"
-msgstr "قم بتوصيل حساب% s الخاص بك"
+msgstr "قم بتوصيل حساب %s الخاص بك"
 
 #: admin/settings.php:397
 msgid "API key"
@@ -1086,17 +1088,17 @@ msgstr "شكرا لك على الاقتراح."
 #: admin/suggest_feature.php:18
 #, php-format
 msgid "%s not able to process the request."
-msgstr "% s غير قادر على معالجة الطلب."
+msgstr "‫%s غير قادر على معالجة الطلب."
 
 #: admin/suggest_feature.php:26
 msgid "Please suggest a feature"
 msgstr "الرجاء اقتراح ميزة"
 
-#: admin/suggest_feature.php:60
+#: admin/suggest_feature.php:66
 msgid "Contribute And Get Rewarded"
 msgstr "ساهم واحصل على مكافأة"
 
-#: admin/suggest_feature.php:61
+#: admin/suggest_feature.php:67
 msgid ""
 "Suggest a feature for this plugin and stand a chance to get a free copy of "
 "premium version of this plugin."
@@ -1104,7 +1106,7 @@ msgstr ""
 "اقترح ميزة لهذا المكون الإضافي واحصل على فرصة للحصول على نسخة مجانية من "
 "الإصدار المتميز من هذا المكون الإضافي."
 
-#: admin/suggest_feature.php:67
+#: admin/suggest_feature.php:73
 msgid "Send Mail To Us"
 msgstr "إرسال بريد إلينا"
 
@@ -1112,11 +1114,10 @@ msgstr "إرسال بريد إلينا"
 msgid "Hi there! Im just a plugin, not much I can do when called directly."
 msgstr "أهلا! أنا مجرد مكون إضافي ، لا يمكنني فعل الكثير عندما اتصل مباشرة."
 
-#: xyz-functions.php:229
 #, fuzzy
-#| msgid "Every 2 Hours"
-msgid "Every 2 hours"
-msgstr "كل ساعتين"
+#~| msgid "Every 2 Hours"
+#~ msgid "Every 2 hours"
+#~ msgstr "كل ساعتين"
 
 #~ msgid "Own App (Traditional: This is for supporting old users) "
 #~ msgstr "تطبيق خاص (تقليدي: مخصص لدعم المستخدمين القدامى) "

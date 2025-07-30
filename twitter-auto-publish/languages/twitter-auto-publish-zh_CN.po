@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: multilang\n"
-"POT-Creation-Date: 2025-06-06 17:41+0530\n"
-"PO-Revision-Date: 2025-06-06 17:41+0530\n"
+"POT-Creation-Date: 2025-07-29 11:43+0530\n"
+"PO-Revision-Date: 2025-07-29 15:08+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: _e;__;esc_html_e\n"
 "X-Poedit-SearchPath-0: admin/about.php\n"
@@ -185,26 +185,30 @@ msgstr "选择使用帖子类别作为主题标签"
 msgid "Enable/Disable SSL peer verification"
 msgstr "启用/禁用 SSL 对等验证"
 
-#: admin/about.php:281
+#: admin/about.php:278
+msgid "Carousel post support for Instagram and Telegram"
+msgstr "轮播帖子支持 Instagram 和 Telegram"
+
+#: admin/about.php:289
 msgid "Image Options"
 msgstr "图像选项"
 
-#: admin/about.php:282
+#: admin/about.php:290
 msgid "Publish images along with post content"
 msgstr "发布图像以及帖子内容"
 
-#: admin/about.php:293
+#: admin/about.php:301
 msgid ""
 "Separate default image url for publishing to multiple social media accounts"
 msgstr "用于发布到多个社交媒体帐户的单独默认图像 URL"
 
-#: admin/about.php:303
+#: admin/about.php:311
 msgid ""
 "Option to specify preference from featured image, post content, post meta "
 "and open graph tags"
 msgstr "选择从特色图像、帖子内容、帖子元和开放图形标签中指定偏好"
 
-#: admin/about.php:313
+#: admin/about.php:321
 msgid ""
 "Publish multiple images to facebook, tumblr, linkedin, twitter, threads and "
 "telegram along with post content\t"
@@ -212,15 +216,15 @@ msgstr ""
 "将多张图像连同帖子内容发布到 facebook、tumblr、linkedin、twitter、threads 和 "
 "telegram "
 
-#: admin/about.php:323
+#: admin/about.php:331
 msgid "Option to specify multiphoto preference from post content and post meta"
 msgstr "从帖子内容和帖子元中指定多张照片偏好的选项"
 
-#: admin/about.php:335
+#: admin/about.php:343
 msgid "Video/Audio Options"
 msgstr "视频/音频选项"
 
-#: admin/about.php:336
+#: admin/about.php:344
 msgid ""
 "Publish video to facebook, tumblr,Linkedin, Instagram, twitter, threads and "
 "telegram along with post content"
@@ -228,158 +232,158 @@ msgstr ""
 "将视频连同帖子内容发布到 facebook、tumblr、Linkedin、Instagram、twitter、"
 "threads 和 telegram"
 
-#: admin/about.php:346
+#: admin/about.php:354
 msgid ""
 "Option to specify preference from post content, post meta and open graph tags"
 msgstr "从帖子内容、帖子元和开放图形标签中指定偏好的选项"
 
-#: admin/about.php:356
+#: admin/about.php:364
 msgid "Publish audio to tumblr along with post content"
 msgstr "将音频与帖子内容一起发布到 棒棒哒"
 
-#: admin/about.php:365
+#: admin/about.php:373
 msgid ""
 "Option to specify audio preference from  post content, post meta and open "
 "graph tags"
 msgstr "从帖子内容、帖子元和打开图形标签中指定音频偏好的选项"
 
-#: admin/about.php:376
+#: admin/about.php:384
 msgid "Filter Options"
 msgstr "过滤器选项"
 
-#: admin/about.php:377
+#: admin/about.php:385
 msgid "Filter posts to publish based on categories"
 msgstr "根据类别过滤要发布的帖子"
 
-#: admin/about.php:387
+#: admin/about.php:395
 msgid "Filter posts to publish based on custom post types"
 msgstr "根据自定义帖子类型过滤要发布的帖子"
 
-#: admin/about.php:396
+#: admin/about.php:404
 msgid "Filter posts to publish based on sticky posts"
 msgstr "根据粘性帖子过滤要发布的帖子"
 
-#: admin/about.php:405
+#: admin/about.php:413
 msgid "Configuration to enable/disable page publishing"
 msgstr "启用/禁用页面发布的配置"
 
-#: admin/about.php:415
+#: admin/about.php:423
 msgid "Category filter for individual accounts"
 msgstr "个人帐户的类别过滤器"
 
-#: admin/about.php:425
+#: admin/about.php:433
 msgid "Custom post type filter for individual accounts"
 msgstr "个人帐户的自定义帖子类型过滤器"
 
-#: admin/about.php:435
+#: admin/about.php:443
 msgid "Enable/Disable page publishing for individual accounts"
 msgstr "为个人帐户启用/禁用页面发布"
 
-#: admin/about.php:445
+#: admin/about.php:453
 msgid "Override auto publish scheduling for individual accounts"
 msgstr "覆盖个人帐户的自动发布计划"
 
-#: admin/about.php:454
+#: admin/about.php:462
 msgid "Override auto publish based on sticky posts for individual accounts"
 msgstr "覆盖基于个人帐户的粘性帖子的自动发布"
 
-#: admin/about.php:465
+#: admin/about.php:473
 msgid "Scheduling"
 msgstr "调度"
 
-#: admin/about.php:466
+#: admin/about.php:474
 msgid "Instantaneous post publishing"
 msgstr "即时发布"
 
-#: admin/about.php:476
+#: admin/about.php:484
 msgid "Scheduled post publishing using cron"
 msgstr "使用 cron 定时发布"
 
-#: admin/about.php:486
+#: admin/about.php:494
 msgid "Status summary of auto publish tasks by mail"
 msgstr "通过邮件自动发布任务的状态摘要"
 
-#: admin/about.php:496
+#: admin/about.php:504
 msgid "Configurable auto publishing time interval"
 msgstr "可配置的自动发布时间间隔"
 
-#: admin/about.php:510
+#: admin/about.php:518
 msgid "Publishing History"
 msgstr "出版历史"
 
-#: admin/about.php:511
+#: admin/about.php:519
 msgid "View auto publish history"
 msgstr "查看自动发布历史"
 
-#: admin/about.php:520
+#: admin/about.php:528
 msgid "View auto publish error logs"
 msgstr "查看自动发布错误日志"
 
-#: admin/about.php:530
+#: admin/about.php:538
 msgid "Option to republish post"
 msgstr "重新发布帖子的选项"
 
-#: admin/about.php:540
+#: admin/about.php:548
 msgid "Option to reschedule publishing"
 msgstr "重新安排发布的选项"
 
-#: admin/about.php:551
+#: admin/about.php:559
 msgid "Installation and Support"
 msgstr "安装和支持"
 
-#: admin/about.php:552
+#: admin/about.php:560
 msgid "Free Installation"
 msgstr "免费安装"
 
-#: admin/about.php:561
+#: admin/about.php:569
 msgid "Privilege customer support"
 msgstr "特权客户支持"
 
-#: admin/about.php:572
+#: admin/about.php:580
 msgid "Addon Features"
 msgstr "附加功能"
 
-#: admin/about.php:573
+#: admin/about.php:581
 msgid "Advanced Autopublish Scheduler"
 msgstr "高级自动发布计划程序"
 
-#: admin/about.php:582
+#: admin/about.php:590
 msgid "URL-Shortener"
 msgstr "网址缩短器"
 
-#: admin/about.php:591
+#: admin/about.php:599
 msgid "Privilege Management"
 msgstr "权限管理"
 
-#: admin/about.php:600
+#: admin/about.php:608
 msgid "Other"
 msgstr "其他"
 
-#: admin/about.php:601
+#: admin/about.php:609
 msgid "Price"
 msgstr "价钱"
 
-#: admin/about.php:602
+#: admin/about.php:610
 msgid "FREE"
 msgstr "免费"
 
-#: admin/about.php:603
+#: admin/about.php:611
 msgid "Starts from 29 USD"
 msgstr "29 美元起"
 
-#: admin/about.php:604
+#: admin/about.php:612
 msgid "Starts from 59 USD"
 msgstr "59 美元起"
 
-#: admin/about.php:607
+#: admin/about.php:615
 msgid "Purchase"
 msgstr "购买"
 
-#: admin/about.php:609 admin/footer.php:27
+#: admin/about.php:617 admin/footer.php:27
 msgid "Buy Now"
 msgstr "立即购买"
 
-#: admin/about.php:616
+#: admin/about.php:624
 msgid "Pinterest is added on experimental basis."
 msgstr "Pinterest 是在实验基础上添加的。"
 
@@ -802,10 +806,8 @@ msgid "Account has been authenticated successfully"
 msgstr "账户已成功认证"
 
 #: admin/settings.php:216
-#, fuzzy
-#| msgid "Twitter Settings"
 msgid "Twitter / X Settings"
-msgstr "推特设置"
+msgstr "Twitter / X 设置"
 
 #: admin/settings.php:217
 msgid "General Settings"
@@ -895,7 +897,7 @@ msgstr "应用选择"
 
 #: admin/settings.php:360
 msgid "Own App- Traditional (Deprecating soon. Use OAuth 2.0) "
-msgstr "自己的应用程序 - 传统（即将弃用。使用 OAuth 2.0）"
+msgstr "自己的应用程序 - 传统（即将弃用。使用 OAuth 2.0"
 
 #: admin/settings.php:363
 msgid "Own App (OAuth2.0 :Recommended)"
@@ -1080,17 +1082,17 @@ msgstr "%s 无法处理请求。"
 msgid "Please suggest a feature"
 msgstr "请推荐一个功能"
 
-#: admin/suggest_feature.php:60
+#: admin/suggest_feature.php:66
 msgid "Contribute And Get Rewarded"
 msgstr "贡献并获得奖励"
 
-#: admin/suggest_feature.php:61
+#: admin/suggest_feature.php:67
 msgid ""
 "Suggest a feature for this plugin and stand a chance to get a free copy of "
 "premium version of this plugin."
 msgstr "建议此插件的功能并有机会获得此插件的高级版本的免费副本。"
 
-#: admin/suggest_feature.php:67
+#: admin/suggest_feature.php:73
 msgid "Send Mail To Us"
 msgstr "发送邮件给我们"
 
@@ -1098,9 +1100,8 @@ msgstr "发送邮件给我们"
 msgid "Hi there! Im just a plugin, not much I can do when called directly."
 msgstr "你好呀！我只是一个插件，直接调用时我无能为力。"
 
-#: xyz-functions.php:229
-msgid "Every 2 hours"
-msgstr "每2小时一次"
+#~ msgid "Every 2 hours"
+#~ msgstr "每2小时一次"
 
 #~ msgid "Own App (Traditional: This is for supporting old users) "
 #~ msgstr "自己的应用程序（传统：这是为了支持老用户） "
