@@ -57,8 +57,7 @@ if(isset($_GET['action']) && $_GET['action']=="edit" && !empty($_GET['post'])) /
 	}
 	$tw_af=get_option('xyz_twap_tw_af');
 	$xyz_twap_tw_app_sel_mode=get_option('xyz_twap_tw_app_sel_mode');
-	$xyz_twap_smapsoln_userid=get_option('xyz_twap_smapsoln_userid');
-	if((get_option('xyz_twap_client_id')!="" && get_option('xyz_twap_client_secret')!="" && $tw_af!=1 && $xyz_twap_tw_app_sel_mode==2) || ((get_option('xyz_twap_twconsumer_id')!="" && get_option('xyz_twap_twconsumer_secret')!="" && get_option('xyz_twap_tw_id')!="" && get_option('xyz_twap_current_twappln_token')!="" && get_option('xyz_twap_twaccestok_secret')!="" && $xyz_twap_tw_app_sel_mode==0 )|| ( $xyz_twap_tw_app_sel_mode==1 && !empty($xyz_twap_smapsoln_userid))) && get_option('xyz_twap_twpost_permission')==1)
+	if((get_option('xyz_twap_client_id')!="" && get_option('xyz_twap_client_secret')!="" && $tw_af!=1 && $xyz_twap_tw_app_sel_mode==2) || ((get_option('xyz_twap_twconsumer_id')!="" && get_option('xyz_twap_twconsumer_secret')!="" && get_option('xyz_twap_tw_id')!="" && get_option('xyz_twap_current_twappln_token')!="" && get_option('xyz_twap_twaccestok_secret')!="" && $xyz_twap_tw_app_sel_mode==0 )) && get_option('xyz_twap_twpost_permission')==1)
 	add_meta_box( "xyz_twap", '<strong>WP Twitter Auto Publish </strong>', 'xyz_twap_addpostmetatags') ;
 }
 function xyz_twap_addpostmetatags()
@@ -262,8 +261,7 @@ $xyz_twap_tw_af=get_option('xyz_twap_tw_af');
 $xyz_twap_tw_token=get_option('xyz_twap_tw_token');
 $taccess_token_secret=get_option('xyz_twap_twaccestok_secret');
 $xyz_twap_tw_app_sel_mode=get_option('xyz_twap_tw_app_sel_mode');
-$xyz_twap_smapsoln_userid=get_option('xyz_twap_smapsoln_userid');
-if(get_option('xyz_twap_twpost_permission')==1 && ($xyz_twap_tw_app_sel_mode==1 && !empty($xyz_twap_smapsoln_userid)) || ($xyz_twap_tw_app_sel_mode==0 && !empty($taccess_token_secret))|| ($xyz_twap_tw_app_sel_mode==2 && !empty($xyz_twap_tw_token) && $xyz_twap_tw_af!=1))
+if(get_option('xyz_twap_twpost_permission')==1 &&  ($xyz_twap_tw_app_sel_mode==0 && !empty($taccess_token_secret))|| ($xyz_twap_tw_app_sel_mode==2 && !empty($xyz_twap_tw_token) && $xyz_twap_tw_af!=1))
 {
 	$postid=0;
 if (isset($_GET['post']))

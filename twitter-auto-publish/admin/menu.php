@@ -5,7 +5,8 @@ add_action('admin_menu', 'xyz_twap_menu');
 function xyz_twap_add_admin_scripts()
 {
 	wp_enqueue_script('jquery');
-	wp_register_script( 'xyz_notice_script_twap', plugins_url('twitter-auto-publish/js/notice.js') );
+    $current_version = xyz_twap_plugin_get_version();
+	wp_register_script( 'xyz_notice_script_twap', plugins_url('twitter-auto-publish/js/notice.js'),array(),$current_version );
 	wp_enqueue_script( 'xyz_notice_script_twap' );
 	$twap_smapsolution_var="SMAPSolutions";
 	$twap_xyzscripts_var="xyzscripts";
@@ -18,7 +19,7 @@ function xyz_twap_add_admin_scripts()
 	    'html3' => sprintf(__('Please connect your %s member account','twitter-auto-publish'),$twap_xyzscripts_var),
 	    'html4' => __('Thank you for enabling backlink !','twitter-auto-publish')
 	));
-	wp_register_style('xyz_twap_style', plugins_url('twitter-auto-publish/css/style.css'));
+	wp_register_style('xyz_twap_style', plugins_url('twitter-auto-publish/css/style.css'),array(),$current_version);
 	wp_enqueue_style('xyz_twap_style');
 }
 
@@ -28,8 +29,6 @@ function xyz_twap_menu()
 {
 	add_menu_page('Twitter Auto Publish - Manage settings', 'WP Twitter Auto Publish', 'manage_options', 'twitter-auto-publish-settings', 'xyz_twap_settings',plugin_dir_url( XYZ_TWAP_PLUGIN_FILE ) . 'images/twap.png');
 	$page=add_submenu_page('twitter-auto-publish-settings', 'Twitter Auto Publish - Manage settings', __('Settings','twitter-auto-publish'), 'manage_options', 'twitter-auto-publish-settings' ,'xyz_twap_settings'); // 8 for admin
-	if(get_option('xyz_twap_xyzscripts_hash_val')!='' && get_option('xyz_twap_xyzscripts_user_id')!='' && get_option('xyz_twap_smapsoln_userid') > 0)
-	    add_submenu_page('twitter-auto-publish-settings', 'Twitter Auto Publish - Manage Authorizations',  __('Manage Authorizations','twitter-auto-publish'), 'manage_options', 'twitter-auto-publish-manage-authorizations' ,'xyz_twap_manage_authorizations');
 	add_submenu_page('twitter-auto-publish-settings', 'Twitter Auto Publish - Logs', __('Logs','twitter-auto-publish'), 'manage_options', 'twitter-auto-publish-log' ,'xyz_twap_logs');
 	add_submenu_page('twitter-auto-publish-settings', 'Twitter Auto Publish - About', __('About','twitter-auto-publish'), 'manage_options', 'twitter-auto-publish-about' ,'xyz_twap_about'); // 8 for admin
 	add_submenu_page('twitter-auto-publish-settings','Twitter Auto Publish - Suggest Feature', __('Suggest a Feature','twitter-auto-publish'), 'manage_options', 'twitter-auto-publish-suggest-features' ,'xyz_twap_suggest_feature');
@@ -45,13 +44,6 @@ function xyz_twap_settings()
 	
 	require( dirname( __FILE__ ) . '/header.php' );
 	require( dirname( __FILE__ ) . '/settings.php' );
-	require( dirname( __FILE__ ) . '/footer.php' );
-}
-
-function xyz_twap_manage_authorizations()
-{
-	require( dirname( __FILE__ ) . '/header.php' );
-	require( dirname( __FILE__ ) . '/manage-auth.php' );
 	require( dirname( __FILE__ ) . '/footer.php' );
 }
 

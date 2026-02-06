@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: multilang\n"
-"POT-Creation-Date: 2025-07-29 11:43+0530\n"
+"POT-Creation-Date: 2025-10-28 14:41+0530\n"
 "PO-Revision-Date: 2022-02-15 12:01+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -423,46 +423,54 @@ msgid "Compare Features"
 msgstr ""
 
 #: admin/footer.php:42
-msgid "Follow Us"
+msgid "We are available for custom development"
+msgstr ""
+
+#: admin/footer.php:44
+msgid "Get a quote"
 msgstr ""
 
 #: admin/footer.php:50
+msgid "Follow Us"
+msgstr ""
+
+#: admin/footer.php:58
 msgid "Support"
 msgstr ""
 
-#: admin/footer.php:51
+#: admin/footer.php:59
 msgid "Contact Us"
 msgstr ""
 
-#: admin/footer.php:52
+#: admin/footer.php:60
 msgid "Please Rate Us"
 msgstr ""
 
-#: admin/footer.php:56
+#: admin/footer.php:64
 msgid "Create a ticket at Wordpress forum"
 msgstr ""
 
-#: admin/footer.php:59
+#: admin/footer.php:67
 msgid "Stay tuned for our updates"
 msgstr ""
 
-#: admin/footer.php:123
+#: admin/footer.php:131
 msgid "Name"
 msgstr ""
 
-#: admin/footer.php:139
+#: admin/footer.php:147
 msgid "Email"
 msgstr ""
 
-#: admin/footer.php:141
+#: admin/footer.php:149
 msgid "Subscribe"
 msgstr ""
 
-#: admin/footer.php:153
+#: admin/footer.php:161
 msgid "Our Plugins"
 msgstr ""
 
-#: admin/footer.php:174
+#: admin/footer.php:182
 msgid "Powered by"
 msgstr ""
 
@@ -499,7 +507,7 @@ msgstr ""
 msgid "Readme"
 msgstr ""
 
-#: admin/header.php:108 admin/menu.php:34
+#: admin/header.php:108 admin/menu.php:35
 msgid "About"
 msgstr ""
 
@@ -541,7 +549,7 @@ msgstr ""
 msgid "Please authorize %s app under Twitter settings to access this page."
 msgstr ""
 
-#: admin/manage-auth.php:255 admin/menu.php:32
+#: admin/manage-auth.php:255 admin/menu.php:33
 msgid "Manage Authorizations"
 msgstr ""
 
@@ -631,46 +639,46 @@ msgstr ""
 msgid "Unable to connect. Please check your curl and firewall settings"
 msgstr ""
 
-#: admin/menu.php:13
+#: admin/menu.php:14
 msgid "Please check whether the email is correct."
 msgstr ""
 
-#: admin/menu.php:14
+#: admin/menu.php:15
 msgid "Select atleast one list."
 msgstr ""
 
-#: admin/menu.php:15
-msgid "You do not have sufficient permissions"
-msgstr ""
-
 #: admin/menu.php:16
-#, php-format
-msgid "Account details successfully deleted from %s"
+msgid "You do not have sufficient permissions"
 msgstr ""
 
 #: admin/menu.php:17
 #, php-format
-msgid "In-active Twitter account successfully deleted from %s"
+msgid "Account details successfully deleted from %s"
 msgstr ""
 
 #: admin/menu.php:18
 #, php-format
-msgid "Please connect your %s member account"
+msgid "In-active Twitter account successfully deleted from %s"
 msgstr ""
 
 #: admin/menu.php:19
+#, php-format
+msgid "Please connect your %s member account"
+msgstr ""
+
+#: admin/menu.php:20
 msgid "Thank you for enabling backlink !"
 msgstr ""
 
-#: admin/menu.php:30
+#: admin/menu.php:31
 msgid "Settings"
 msgstr ""
 
-#: admin/menu.php:33
+#: admin/menu.php:34
 msgid "Logs"
 msgstr ""
 
-#: admin/menu.php:35
+#: admin/menu.php:36
 msgid "Suggest a Feature"
 msgstr ""
 

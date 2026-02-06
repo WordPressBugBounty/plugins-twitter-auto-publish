@@ -6,7 +6,6 @@ require( dirname( __FILE__ ) . '/authorization.php' );
 wp_get_current_user();
 $imgpath= plugins_url()."/twitter-auto-publish/images/";
 $heimg=$imgpath."support.png";
-$domain_name=$xyz_twap_smapsoln_userid=$xyzscripts_user_id=$xyzscripts_hash_val=$xyz_twap_licence_key='';
 
 
 if(!$_POST && isset($_GET['twap_notice']) && $_GET['twap_notice'] == 'hide')
@@ -168,17 +167,7 @@ if(isset($_POST['twit']) && $terf==1)
 	&nbsp;&nbsp;&nbsp;<span id="xyz_twap_system_notice_area_dismiss"><?php esc_html_e('Dismiss','twitter-auto-publish');?></span>
 </div>
 <?php } 
-if(isset($_GET['msg']) && $_GET['msg']==1)
-{
-	?>
-<div class="xyz_twap_system_notice_area_style1" id="xyz_twap_system_notice_area">
-	<?php $twap_xyzscripts_name="xyzscripts";
-	$twap_xyz_success_msg=sprintf(__('Successfully connected to %s member area','twitter-auto-publish'),$twap_xyzscripts_name);
-	echo esc_html($twap_xyz_success_msg); ?>. &nbsp;&nbsp;&nbsp;<span
-		id="xyz_twap_system_notice_area_dismiss"><?php esc_html_e('Dismiss','twitter-auto-publish');?></span>
-</div>
-	<?php 
-}
+
 if(isset($_GET['msg']) && $_GET['msg']==2){
 	?>
 <div class="xyz_twap_system_notice_area_style1" id="xyz_twap_system_notice_area">
@@ -310,39 +299,7 @@ if($xyz_twap_app_sel_mode==2)
 		<input type="hidden" value="config">
 
 			<div style="font-weight: bold;padding: 3px;"><?php esc_html_e('All fields given below are mandatory','twitter-auto-publish');?></div> 
-		<?php 	
-			if ($xyz_twap_app_sel_mode==1){
-	 		$domain_name=trim(get_option('siteurl'));
-	 		$xyz_twap_smapsoln_userid=intval(trim(get_option('xyz_twap_smapsoln_userid')));
-	 		$xyzscripts_hash_val=trim(get_option('xyz_twap_xyzscripts_hash_val'));
-	 		$xyzscripts_user_id=trim(get_option('xyz_twap_xyzscripts_user_id'));
-	 		$xyz_twap_accountId=0;
-	 		$xyz_twap_licence_key='';
-	 		$request_hash=md5($xyzscripts_user_id.$xyzscripts_hash_val);
-	 		$auth_secret_key=md5('smapsolutions'.$domain_name.$xyz_twap_accountId.$xyz_twap_smapsoln_userid.$xyzscripts_user_id.$request_hash.$xyz_twap_licence_key.'twap');
-	 		if($xyz_twap_app_sel_mode==1 && empty($xyz_twap_smapsoln_userid) )
-			{
-				?>
-				<div class="xyz_twap_twitter_auth"> 
-	 			<span id='ajax-save' style="display:none;"><img	class="img"  title="Saving details"	src="<?php echo plugins_url('../images/ajax-loader.gif',__FILE__);?>" style="width:65px;height:70px; "></span>
-		 			<span id="auth_message">
-				<span style="color: red;" ><?php esc_html_e('Application needs authorisation','twitter-auto-publish');?></span> <br>
-		 			     <input type="hidden" value="<?php echo  (is_ssl() ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST']; ?>" id="parent_domain">
-		 					<input type="submit" class="xyz_twap_submit_new" name="tw_auth"
-	 						value = <?php _e('Authorize','twitter-auto-publish'); ?> onclick="javascript:return twap_popup_tw_auth('<?php echo urlencode($domain_name);?>','<?php echo $xyz_twap_smapsoln_userid;?>','<?php echo $xyzscripts_user_id;?>','<?php echo $xyzscripts_hash_val;?>','<?php echo $auth_secret_key;?>','<?php echo $request_hash;?>');void(0);"/><br><br>
-	 				</span></div>
-		 				<?php }
-		 				else if($xyz_twap_app_sel_mode==1 && !empty($xyz_twap_smapsoln_userid) )
-		 				{
-		 					?>
-	 					<div class="xyz_twap_twitter_auth"><span id='ajax-save' style="display:none;"><img	class="img"  title="Saving details"	src="<?php echo plugins_url('../images/ajax-loader.gif',__FILE__);?>" style="width:65px;height:70px; "></span>
-		 				<input type="hidden" value="<?php echo  (is_ssl() ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST']; ?>" id="parent_domain">
-		 				<input type="submit" class="xyz_twap_submit_new" name="tw_auth"
-	 				value = <?php _e('Reauthorize','twitter-auto-publish'); ?> title="Reauthorize the account" onclick="javascript:return twap_popup_tw_auth('<?php echo urlencode($domain_name);?>','<?php echo $xyz_twap_smapsoln_userid;?>','<?php echo $xyzscripts_user_id;?>','<?php echo $xyzscripts_hash_val;?>','<?php echo $auth_secret_key;?>','<?php echo $request_hash;?>');void(0);"/><br><br>
-		 				</div>
-		 				<?php }
-		 	}
-			///////////////////////////////?>
+		
 			<table class="widefat xyz_twap_widefat_table" style="width: 99%">
 						<tr valign="top">
 					<td><?php esc_html_e('Enable auto publish posts to my twitter account','twitter-auto-publish');?>
@@ -363,35 +320,9 @@ if($xyz_twap_app_sel_mode==2)
 				<span style="color: #a7a7a7;font-weight: bold;"> <?php esc_html_e('Own App (OAuth2.0 :Recommended)','twitter-auto-publish'); ?></span>
 
 
-	<?php if(get_option('xyz_twap_smapsoln_userid')==1) {?>
-				<br>
-				<input type="radio" name="xyz_twap_app_sel_mode" id="xyz_twap_app_sel_mode_xyzapp" value="1" <?php if($xyz_twap_app_sel_mode==1) echo 'checked';?>>
-				<span style="color: #000000;font-size: 13px;background-color: #f7a676;font-weight: 500;padding: 3px 5px;"><i class="fa fa-star-o" aria-hidden="true" style="margin-right:5px;"></i> <?php $twap_smap_site="SMAPsolution.com's"; $twap_ready_pub=sprintf(__('%s App (ready to publish)','twitter-auto-publish'),$twap_smap_site); echo $twap_ready_pub; ?> <i class="fa fa-star-o" aria-hidden="true" style="margin-right:5px;"></i></span><br> <span style="padding-left: 30px;"> <?php _e('Starts from 10 USD per year','twitter-auto-publish'); ?></span><br/>
-				<span style="color: #6a364a;font-size: 13px;padding-left: 30px;">SMAPSolutions will no-longer support media uploads,please use {PERMALINK}<br/></span>
-				<span style="color: #6a364a;font-size: 13px;padding-left: 30px;"> in message format to display preview of post</span><br>
-				<?php if(get_option('xyz_twap_smapsoln_userid')==0)
-				{?>
-				<span style="color: #ff5e00;padding-left: 27px;font-size: small;"><b><?php esc_html_e('30 DAYS FREE TRIAL AVAILABLE','twitter-auto-publish');?>*</b></span>
-				<br/>
-				<?php }?>
-				<a target="_blank" href="https://help.xyzscripts.com/docs/social-media-auto-publish/faq/how-can-i-use-the-alternate-solution-for-publishing-posts-to-twitter/" style="padding-left: 30px;"> <?php $twap_how_smap=sprintf(__('How to use %s application?','twitter-auto-publish'),$twap_smap_site); echo $twap_how_smap; ?></a>
-		<?php }?>
 				</td>
 			</tr>
-			<?php 
-			if( ($xyzscripts_user_id =='' || $xyzscripts_hash_val=='') && $xyz_twap_app_sel_mode==1)
-			{  ?>
-			<tr valign="top" id="xyz_twap_conn_to_xyzscripts">
-			<td width="50%">	</td>
-			<td width="50%">
-			<span id='ajax-save-xyzscript_acc' style="display:none;"><img	class="img"  title="Saving details"	src="<?php echo plugins_url('../images/ajax-loader.gif',__FILE__);?>" style="width:65px;height:70px; "></span>
-			<span id="connect_to_xyzscripts"style="background-color: #1A87B9;color: white; padding: 4px 5px;
-    text-align: center; text-decoration: none;   display: inline-block;border-radius: 4px;">
-			<a href="javascript:twap_popup_connect_to_xyzscripts();void(0);" style="color:white !important;"><?php $twap_var_xyz="xyzscripts"; $twap_connect_xyz=sprintf(__('Connect your %s account','twitter-auto-publish'),$twap_var_xyz); echo $twap_connect_xyz; ?></a>
-			</span>
-			</td>
-			</tr>
-			<?php }?>
+		
 <!-- ////////////Tradional credentials////////// -->
 			<tr valign="top" class="xyz_twap_twitter_traditional_settings ">
 					<td width="50%"><?php esc_html_e('API key','twitter-auto-publish'); ?>
@@ -891,20 +822,17 @@ jQuery(document).ready(function() {
 		jQuery('.xyz_twap_twitter_traditional_settings').hide();
 		jQuery('.xyz_twap_twitter_oauth2_settings').hide();
 		jQuery('#xyz_twap_app_creation_note').hide();
-		jQuery('#xyz_twap_conn_to_xyzscripts').show();
 		jQuery('.xyz_twap_twitter_auth').show();
    }
    else if(xyz_twap_app_sel_mode ==0){
 	   	jQuery('.xyz_twap_twitter_traditional_settings').show();
 		jQuery('.xyz_twap_twitter_oauth2_settings').hide();
 	   	jQuery('#xyz_twap_app_creation_note').show();
-	   	jQuery('#xyz_twap_conn_to_xyzscripts').hide();
 	   	jQuery('.xyz_twap_twitter_auth').hide();
 	   		}
 	else{
 		jQuery('.xyz_twap_twitter_oauth2_settings').show();
 		jQuery('.xyz_twap_twitter_traditional_settings').hide();
-		jQuery('#xyz_twap_conn_to_xyzscripts').hide();
 	}		
    jQuery("input[name='xyz_twap_app_sel_mode']").click(function(){
 	   var xyz_twap_app_sel_mode=jQuery("input[name='xyz_twap_app_sel_mode']:checked").val();
@@ -912,25 +840,20 @@ jQuery(document).ready(function() {
 		    jQuery('#xyz_twap_app_creation_note').hide();
 	jQuery('.xyz_twap_twitter_traditional_settings').hide();
 		jQuery('.xyz_twap_twitter_oauth2_settings').hide();
-			jQuery('#xyz_twap_conn_to_xyzscripts').show();
 			jQuery('.xyz_twap_twitter_auth').show();
 			}
 		   else if(xyz_twap_app_sel_mode ==0){
 			jQuery('.xyz_twap_twitter_traditional_settings').show();
 			jQuery('.xyz_twap_twitter_oauth2_settings').hide();
 			jQuery('#xyz_twap_app_creation_note').show(); 
-		   	jQuery('#xyz_twap_conn_to_xyzscripts').hide();
 		   	jQuery('.xyz_twap_twitter_auth').hide();
 		   	}
 			else{
 				jQuery('.xyz_twap_twitter_oauth2_settings').show();
 				jQuery('.xyz_twap_twitter_traditional_settings').hide();
-		jQuery('#xyz_twap_conn_to_xyzscripts').hide();	
 		   	}
 	   });
-   window.addEventListener('message', function(e) {
-		xyz_twap_ProcessChildMessage(e.data);
-		} , false);
+
 	}); 
 	
 function setcat(obj)
@@ -1017,107 +940,5 @@ function xyz_twap_open_tab(evt, xyz_twap_form_div_id) {
     document.getElementById(xyz_twap_form_div_id).style.display = "block";
     evt.currentTarget.className += " active";
 }
-function twap_popup_connect_to_xyzscripts()
-{
-	var childWindow = null;
-	var twap_xyzscripts_url='<?php echo "https://smap.xyzscripts.com/index.php?page=index/register";?>';
-	childWindow = window.open(twap_xyzscripts_url, "Connect to xyzscripts", "toolbar=yes,scrollbars=yes,resizable=yes,left=500,width=600,height=600");
-	return false;	
-}
-function twap_popup_tw_auth(domain_name,xyz_twap_smapsoln_userid,xyzscripts_user_id,xyzscripts_hash_val,auth_secret_key,request_hash)
-{
-	if(xyzscripts_user_id==''|| xyzscripts_hash_val=='')
-	{
-		if(jQuery('#xyz_twap_system_notice_area').length==0)
-			jQuery('body').append('<div class="xyz_twap_system_notice_area_style0" id="xyz_twap_system_notice_area"></div>');
-			jQuery("#xyz_twap_system_notice_area").html(xyz_script_twap_var.html3);
-	    	jQuery("#xyz_twap_system_notice_area").append('<span id="xyz_twap_system_notice_area_dismiss"> <?php _e('Dismiss','twitter-auto-publish'); ?> </span>');
-			jQuery("#xyz_twap_system_notice_area").show();
-			jQuery('#xyz_twap_system_notice_area_dismiss').click(function() {
-				jQuery('#xyz_twap_system_notice_area').animate({
-					opacity : 'hide',
-					height : 'hide'
-				}, 500);
-			});
-			return false;
-	}
-	else{
-	var childWindow = null;
-	var smap_licence_key='';
-	var account_id=0;
-	var smap_solution_url='<?php echo XYZ_TWAP_SMAPSOLUTION_AUTH_URL;?>';
-	childWindow = window.open(smap_solution_url+"authorize-twitter/twitter.php?smap_tw_auth_id="+xyz_twap_smapsoln_userid+"&account_id="+account_id+
-			"&domain_name="+domain_name+"&xyzscripts_user_id="+xyzscripts_user_id+"&smap_licence_key="+smap_licence_key+"&auth_secret_key="+auth_secret_key+"&free_plugin_source=twap&request_hash="+request_hash, "SmapSolutions Authorization", "toolbar=yes,scrollbars=yes,resizable=yes,left=500,width=600,height=600");
-	return false;	}
-}
-function xyz_twap_ProcessChildMessage(message) {
-	var messageType = message.slice(0,5);
-	if(messageType==="error")
-	{
-		message=message.substring(6);
-		if(jQuery('#xyz_twap_system_notice_area').length==0)
-		jQuery('body').append('<div class="xyz_twap_system_notice_area_style0" id="xyz_twap_system_notice_area"></div>');
-		jQuery("#xyz_twap_system_notice_area").html(message+' <span id="xyz_twap_system_notice_area_dismiss"> <?php _e('Dismiss','twitter-auto-publish'); ?> </span>');
-		jQuery("#xyz_twap_system_notice_area").show();
-		jQuery('#xyz_twap_system_notice_area_dismiss').click(function() {
-			jQuery('#xyz_twap_system_notice_area').animate({
-				opacity : 'hide',
-				height : 'hide'
-			}, 500);
-		});
-	}
-	var obj1=jQuery.parseJSON(message);
-	if(obj1.content &&  obj1.userid && obj1.xyzscripts_user)
-	{
-		var xyz_userid=obj1.userid;var xyz_user_hash=obj1.content;
-		var xyz_twap_xyzscripts_accinfo_nonce= '<?php echo wp_create_nonce('xyz_twap_xyzscripts_accinfo_nonce');?>';
-		var dataString = { 
-				action: 'xyz_twap_xyzscripts_accinfo_auto_update', 
-				xyz_userid: xyz_userid ,
-				xyz_user_hash: xyz_user_hash,
-				dataType: 'json',
-				_wpnonce: xyz_twap_xyzscripts_accinfo_nonce
-			};
-		jQuery("#connect_to_xyzscripts").hide();
-		jQuery("#ajax-save-xyzscript_acc").show();
-		jQuery.post(ajaxurl, dataString ,function(response) {
-			 if(response==1)
-			       alert(xyz_script_twap_var.alert3);
-			else{
- 		  var base_url = '<?php echo admin_url('admin.php?page=twitter-auto-publish-settings');?>';
-  		 window.location.href = base_url+'&msg=1';
-		}
- 		});
-	}
-	if((obj1.xyz_tw_username) && (obj1.xyz_tw_user_id)){ 
-			var secretkey=obj1.xyz_secretkey;
-			var smapsoln_userid=obj1.xyz_smapsoln_userid;
-			var xyz_tw_user_id=obj1.xyz_tw_user_id;
-			var xyz_twap_xyzscripts_hash_val=obj1.xyz_smap_xyzscripts_hash_val;
-			var xyz_twap_xyzscripts_user_id=obj1.xyz_smap_xyzscripts_user_id;
-			var xyz_tw_username=obj1.xyz_tw_username;
-			var xyz_twap_tw_selected_pages_nonce= '<?php echo wp_create_nonce('xyz_twap_tw_account_details_nonce');?>';
-			var dataString = {
-				action: 'xyz_twap_tw_account_details_auto_update',
-				twap_secretkey: secretkey,
-				xyz_twap_xyzscripts_user_id: xyz_twap_xyzscripts_user_id,
-				smapsoln_userid:smapsoln_userid,
-				xyz_tw_user_id:xyz_tw_user_id,
-				xyz_tw_username:xyz_tw_username,
-				xyz_twap_xyzscripts_hash_val:xyz_twap_xyzscripts_hash_val,
-				dataType: 'json',
-				_wpnonce: xyz_twap_tw_selected_pages_nonce
-			};
-			jQuery.post(ajaxurl, dataString ,function(response)
-			{
-				 if(response==-1)
-				       	alert(xyz_script_twap_var.alert3);
-				else
-					{
-				 var base_url = '<?php echo admin_url('admin.php?page=twitter-auto-publish-settings');?>';//msg - 
-		 window.location.href = base_url+'&msg=2';	
-					}
-			});
-		}
-}
+
 </script>

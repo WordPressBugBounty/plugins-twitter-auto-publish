@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: multilang\n"
-"POT-Creation-Date: 2025-07-29 11:43+0530\n"
-"PO-Revision-Date: 2025-07-29 15:37+0530\n"
+"POT-Creation-Date: 2025-10-28 14:41+0530\n"
+"PO-Revision-Date: 2025-10-28 14:41+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ar\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
-"X-Generator: Poedit 3.4\n"
+"X-Generator: Poedit 3.0.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: _e;__;esc_html_e;_X\n"
 "X-Poedit-SearchPath-0: admin/about.php\n"
@@ -443,46 +443,54 @@ msgid "Compare Features"
 msgstr "قارن الميزات"
 
 #: admin/footer.php:42
+msgid "We are available for custom development"
+msgstr "نحن متاحون للتطوير المخصص"
+
+#: admin/footer.php:44
+msgid "Get a quote"
+msgstr "احصل على عرض أسعار"
+
+#: admin/footer.php:50
 msgid "Follow Us"
 msgstr "تابعنا"
 
-#: admin/footer.php:50
+#: admin/footer.php:58
 msgid "Support"
 msgstr "دعم"
 
-#: admin/footer.php:51
+#: admin/footer.php:59
 msgid "Contact Us"
 msgstr "اتصل بنا"
 
-#: admin/footer.php:52
+#: admin/footer.php:60
 msgid "Please Rate Us"
 msgstr "ارجوك قم بتقييمنا"
 
-#: admin/footer.php:56
+#: admin/footer.php:64
 msgid "Create a ticket at Wordpress forum"
 msgstr "إنشاء تذكرة في منتدى وورد"
 
-#: admin/footer.php:59
+#: admin/footer.php:67
 msgid "Stay tuned for our updates"
 msgstr "ترقبوا تحديثاتنا"
 
-#: admin/footer.php:123
+#: admin/footer.php:131
 msgid "Name"
 msgstr "اسم"
 
-#: admin/footer.php:139
+#: admin/footer.php:147
 msgid "Email"
 msgstr "بريد الالكتروني"
 
-#: admin/footer.php:141
+#: admin/footer.php:149
 msgid "Subscribe"
 msgstr "وقع بإمضائة"
 
-#: admin/footer.php:153
+#: admin/footer.php:161
 msgid "Our Plugins"
 msgstr "ملحقاتنا"
 
-#: admin/footer.php:174
+#: admin/footer.php:182
 msgid "Powered by"
 msgstr "مشغل بواسطة"
 
@@ -519,7 +527,7 @@ msgstr "أسئلة مكررة"
 msgid "Readme"
 msgstr "التمهيدي"
 
-#: admin/header.php:108 admin/menu.php:34
+#: admin/header.php:108 admin/menu.php:35
 msgid "About"
 msgstr "بشأن"
 
@@ -561,7 +569,7 @@ msgstr "تم تحديث حزمة %s بنجاح."
 msgid "Please authorize %s app under Twitter settings to access this page."
 msgstr "يرجى السماح لتطبيق %s ضمن إعدادات تويتر بالدخول إلى هذه الصفحة."
 
-#: admin/manage-auth.php:255 admin/menu.php:32
+#: admin/manage-auth.php:255 admin/menu.php:33
 msgid "Manage Authorizations"
 msgstr "إدارة التراخيص"
 
@@ -651,46 +659,46 @@ msgstr "لا تراخيص"
 msgid "Unable to connect. Please check your curl and firewall settings"
 msgstr "غير قادر على الاتصال. يرجى التحقق من إعدادات الضفيرة وجدار الحماية"
 
-#: admin/menu.php:13
+#: admin/menu.php:14
 msgid "Please check whether the email is correct."
 msgstr "يرجى التحقق من صحة البريد الإلكتروني."
 
-#: admin/menu.php:14
+#: admin/menu.php:15
 msgid "Select atleast one list."
 msgstr "حدد قائمة واحدة على الأقل."
 
-#: admin/menu.php:15
+#: admin/menu.php:16
 msgid "You do not have sufficient permissions"
 msgstr "ليس لديك أذونات كافية"
 
-#: admin/menu.php:16
+#: admin/menu.php:17
 #, php-format
 msgid "Account details successfully deleted from %s"
 msgstr "تم حذف تفاصيل الحساب بنجاح من %s"
 
-#: admin/menu.php:17
+#: admin/menu.php:18
 #, php-format
 msgid "In-active Twitter account successfully deleted from %s"
 msgstr "تم حذف حساب Twitter غير النشط بنجاح من %s"
 
-#: admin/menu.php:18
+#: admin/menu.php:19
 #, php-format
 msgid "Please connect your %s member account"
 msgstr "الرجاء ربط حساب العضو %s الخاص بك"
 
-#: admin/menu.php:19
+#: admin/menu.php:20
 msgid "Thank you for enabling backlink !"
 msgstr "شكرا لك لتمكين باك لينك!"
 
-#: admin/menu.php:30
+#: admin/menu.php:31
 msgid "Settings"
 msgstr "إعدادات"
 
-#: admin/menu.php:33
+#: admin/menu.php:34
 msgid "Logs"
 msgstr "سجل"
 
-#: admin/menu.php:35
+#: admin/menu.php:36
 msgid "Suggest a Feature"
 msgstr "اقترح ميزة"
 
@@ -1114,10 +1122,9 @@ msgstr "إرسال بريد إلينا"
 msgid "Hi there! Im just a plugin, not much I can do when called directly."
 msgstr "أهلا! أنا مجرد مكون إضافي ، لا يمكنني فعل الكثير عندما اتصل مباشرة."
 
-#, fuzzy
-#~| msgid "Every 2 Hours"
-#~ msgid "Every 2 hours"
-#~ msgstr "كل ساعتين"
+#: xyz-functions.php:229
+msgid "Every 2 hours"
+msgstr "كل ساعتينكل ساعتين"
 
 #~ msgid "Own App (Traditional: This is for supporting old users) "
 #~ msgstr "تطبيق خاص (تقليدي: مخصص لدعم المستخدمين القدامى) "

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: twitter-auto-publish\n"
-"POT-Creation-Date: 2025-07-29 10:57+0530\n"
-"PO-Revision-Date: 2025-07-29 11:24+0530\n"
+"POT-Creation-Date: 2025-10-28 14:41+0530\n"
+"PO-Revision-Date: 2025-10-28 14:42+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -465,46 +465,54 @@ msgid "Compare Features"
 msgstr "Funktionen vergleichen"
 
 #: admin/footer.php:42
+msgid "We are available for custom development"
+msgstr "Wir stehen für kundenspezifische Entwicklungen zur Verfügung"
+
+#: admin/footer.php:44
+msgid "Get a quote"
+msgstr "Angebot anfordern"
+
+#: admin/footer.php:50
 msgid "Follow Us"
 msgstr "Folge uns"
 
-#: admin/footer.php:50
+#: admin/footer.php:58
 msgid "Support"
 msgstr "Unterstützen"
 
-#: admin/footer.php:51
+#: admin/footer.php:59
 msgid "Contact Us"
 msgstr "Kontaktiere uns"
 
-#: admin/footer.php:52
+#: admin/footer.php:60
 msgid "Please Rate Us"
 msgstr "Bitte bewerten Sie uns"
 
-#: admin/footer.php:56
+#: admin/footer.php:64
 msgid "Create a ticket at Wordpress forum"
 msgstr "Erstellen Sie ein Ticket im Wordpress-Forum"
 
-#: admin/footer.php:59
+#: admin/footer.php:67
 msgid "Stay tuned for our updates"
 msgstr "Bleiben Sie dran für unsere Updates"
 
-#: admin/footer.php:123
+#: admin/footer.php:131
 msgid "Name"
 msgstr "Name"
 
-#: admin/footer.php:139
+#: admin/footer.php:147
 msgid "Email"
 msgstr "Email"
 
-#: admin/footer.php:141
+#: admin/footer.php:149
 msgid "Subscribe"
 msgstr "Abonnieren"
 
-#: admin/footer.php:153
+#: admin/footer.php:161
 msgid "Our Plugins"
 msgstr "Unsere Plugins"
 
-#: admin/footer.php:174
+#: admin/footer.php:182
 msgid "Powered by"
 msgstr "Bereitgestellt von"
 
@@ -543,7 +551,7 @@ msgstr "Häufig gestellte Fragen"
 msgid "Readme"
 msgstr "Liesmich"
 
-#: admin/header.php:108 admin/menu.php:34
+#: admin/header.php:108 admin/menu.php:35
 msgid "About"
 msgstr "Etwa"
 
@@ -587,7 +595,7 @@ msgstr ""
 "Bitte autorisieren Sie die %s-App in den Twitter-Einstellungen für den "
 "Zugriff auf diese Seite."
 
-#: admin/manage-auth.php:255 admin/menu.php:32
+#: admin/manage-auth.php:255 admin/menu.php:33
 msgid "Manage Authorizations"
 msgstr "Berechtigungen verwalten"
 
@@ -679,46 +687,46 @@ msgstr ""
 "Verbindung konnte nicht hergestellt werden. Bitte überprüfen Sie Ihre Curl- "
 "und Firewall-Einstellungen"
 
-#: admin/menu.php:13
+#: admin/menu.php:14
 msgid "Please check whether the email is correct."
 msgstr "Bitte überprüfen Sie, ob die E-Mail korrekt ist."
 
-#: admin/menu.php:14
+#: admin/menu.php:15
 msgid "Select atleast one list."
 msgstr "Wählen Sie mindestens eine Liste aus."
 
-#: admin/menu.php:15
+#: admin/menu.php:16
 msgid "You do not have sufficient permissions"
 msgstr "Sie haben keine ausreichenden Berechtigungen"
 
-#: admin/menu.php:16
+#: admin/menu.php:17
 #, php-format
 msgid "Account details successfully deleted from %s"
 msgstr "Kontodaten erfolgreich von %s gelöscht"
 
-#: admin/menu.php:17
+#: admin/menu.php:18
 #, php-format
 msgid "In-active Twitter account successfully deleted from %s"
 msgstr "Inaktives Twitter-Konto erfolgreich von %s gelöscht"
 
-#: admin/menu.php:18
+#: admin/menu.php:19
 #, php-format
 msgid "Please connect your %s member account"
 msgstr "Bitte verbinden Sie Ihr %s Mitgliedskonto"
 
-#: admin/menu.php:19
+#: admin/menu.php:20
 msgid "Thank you for enabling backlink !"
 msgstr "Vielen Dank für die Aktivierung des Backlinks!"
 
-#: admin/menu.php:30
+#: admin/menu.php:31
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: admin/menu.php:33
+#: admin/menu.php:34
 msgid "Logs"
 msgstr "Aufzeichnungen"
 
-#: admin/menu.php:35
+#: admin/menu.php:36
 msgid "Suggest a Feature"
 msgstr "Schlagen Sie eine Funktion vor"
 
@@ -944,7 +952,7 @@ msgstr "Anwendungsauswahl"
 #: admin/settings.php:360
 msgid "Own App- Traditional (Deprecating soon. Use OAuth 2.0) "
 msgstr ""
-"Eigene App – Traditionell (Wird bald veraltet. Verwenden Sie OAuth 2.0)"
+"Eigene App – Traditionell (Wird bald veraltet. Verwenden Sie OAuth 2.0) "
 
 #: admin/settings.php:363
 msgid "Own App (OAuth2.0 :Recommended)"

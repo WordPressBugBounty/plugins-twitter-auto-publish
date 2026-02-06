@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: multilang\n"
-"POT-Creation-Date: 2025-07-29 11:43+0530\n"
-"PO-Revision-Date: 2025-07-29 15:22+0530\n"
+"POT-Creation-Date: 2025-10-28 14:39+0530\n"
+"PO-Revision-Date: 2025-10-28 14:42+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"X-Generator: Poedit 3.4\n"
+"X-Generator: Poedit 3.0.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;esc_html_e\n"
 "X-Poedit-SearchPath-0: admin/about.php\n"
@@ -461,46 +461,54 @@ msgid "Compare Features"
 msgstr "Сравните функции"
 
 #: admin/footer.php:42
+msgid "We are available for custom development"
+msgstr "Мы готовы выполнить индивидуальную разработку"
+
+#: admin/footer.php:44
+msgid "Get a quote"
+msgstr "Получить цитату"
+
+#: admin/footer.php:50
 msgid "Follow Us"
 msgstr "Подписывайтесь на нас"
 
-#: admin/footer.php:50
+#: admin/footer.php:58
 msgid "Support"
 msgstr "Поддержки"
 
-#: admin/footer.php:51
+#: admin/footer.php:59
 msgid "Contact Us"
 msgstr "Связаться с нами"
 
-#: admin/footer.php:52
+#: admin/footer.php:60
 msgid "Please Rate Us"
 msgstr "Пожалуйста, оцените нас"
 
-#: admin/footer.php:56
+#: admin/footer.php:64
 msgid "Create a ticket at Wordpress forum"
 msgstr "Создать тикет на форуме Wordpress"
 
-#: admin/footer.php:59
+#: admin/footer.php:67
 msgid "Stay tuned for our updates"
 msgstr "Следите за нашими обновлениями"
 
-#: admin/footer.php:123
+#: admin/footer.php:131
 msgid "Name"
 msgstr "Имя"
 
-#: admin/footer.php:139
+#: admin/footer.php:147
 msgid "Email"
 msgstr "Эл. адрес"
 
-#: admin/footer.php:141
+#: admin/footer.php:149
 msgid "Subscribe"
 msgstr "Подписаться"
 
-#: admin/footer.php:153
+#: admin/footer.php:161
 msgid "Our Plugins"
 msgstr "Наши плагины"
 
-#: admin/footer.php:174
+#: admin/footer.php:182
 msgid "Powered by"
 msgstr "Питаться от"
 
@@ -537,7 +545,7 @@ msgstr "Вопросы-Ответы"
 msgid "Readme"
 msgstr "Прочти меня"
 
-#: admin/header.php:108 admin/menu.php:34
+#: admin/header.php:108 admin/menu.php:35
 msgid "About"
 msgstr "О"
 
@@ -581,7 +589,7 @@ msgstr ""
 "Пожалуйста, авторизуйте приложение %s в настройках Twitter для доступа к "
 "этой странице."
 
-#: admin/manage-auth.php:255 admin/menu.php:32
+#: admin/manage-auth.php:255 admin/menu.php:33
 msgid "Manage Authorizations"
 msgstr "Управление авторизациями"
 
@@ -672,46 +680,46 @@ msgid "Unable to connect. Please check your curl and firewall settings"
 msgstr ""
 "Невозможно подключиться. Пожалуйста, проверьте настройки curl и брандмауэра"
 
-#: admin/menu.php:13
+#: admin/menu.php:14
 msgid "Please check whether the email is correct."
 msgstr "Пожалуйста, проверьте правильность адреса электронной почты."
 
-#: admin/menu.php:14
+#: admin/menu.php:15
 msgid "Select atleast one list."
 msgstr "Выберите хотя бы один список."
 
-#: admin/menu.php:15
+#: admin/menu.php:16
 msgid "You do not have sufficient permissions"
 msgstr "У вас недостаточно прав"
 
-#: admin/menu.php:16
+#: admin/menu.php:17
 #, php-format
 msgid "Account details successfully deleted from %s"
 msgstr "Данные учетной записи успешно удалены из %s"
 
-#: admin/menu.php:17
+#: admin/menu.php:18
 #, php-format
 msgid "In-active Twitter account successfully deleted from %s"
 msgstr "Неактивная учетная запись Twitter успешно удалена из %s"
 
-#: admin/menu.php:18
+#: admin/menu.php:19
 #, php-format
 msgid "Please connect your %s member account"
 msgstr "Пожалуйста, подключите свою учетную запись участника %s"
 
-#: admin/menu.php:19
+#: admin/menu.php:20
 msgid "Thank you for enabling backlink !"
 msgstr "Спасибо за активацию обратной ссылки!"
 
-#: admin/menu.php:30
+#: admin/menu.php:31
 msgid "Settings"
 msgstr "Hастроек"
 
-#: admin/menu.php:33
+#: admin/menu.php:34
 msgid "Logs"
 msgstr "Рекорды"
 
-#: admin/menu.php:35
+#: admin/menu.php:36
 msgid "Suggest a Feature"
 msgstr "Предложить функцию"
 
@@ -1151,8 +1159,9 @@ msgstr "Отправить письмо нам"
 msgid "Hi there! Im just a plugin, not much I can do when called directly."
 msgstr "Всем привет! Я просто плагин, мало что могу сделать при прямом вызове."
 
-#~ msgid "Every 2 hours"
-#~ msgstr "Каждые 2 часа"
+#: xyz-functions.php:229
+msgid "Every 2 hours"
+msgstr "Каждые 2 часа"
 
 #~ msgid "Own App (Traditional: This is for supporting old users) "
 #~ msgstr ""

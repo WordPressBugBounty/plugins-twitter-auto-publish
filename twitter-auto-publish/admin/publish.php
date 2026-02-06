@@ -135,10 +135,7 @@ $tw_af=1;
 		$tw_af = get_option('xyz_twap_tw_af');
 	}
 	$twid=get_option('xyz_twap_tw_id');
-	$xyz_twap_smapsoln_userid=get_option('xyz_twap_smapsoln_userid');
-	$xyz_twap_smapsoln_secret_key=get_option('xyz_twap_smapsoln_secret_key');
-	$xyz_twap_xyzscripts_user_id=get_option('xyz_twap_xyzscripts_user_id');
-	$xyz_twap_xyzscripts_hash_val=get_option('xyz_twap_xyzscripts_hash_val');
+	
 	if ($messagetopost=='')
 	$messagetopost=get_option('xyz_twap_twmessage');
 	if(isset($_POST['xyz_twap_twmessage']))
@@ -296,8 +293,7 @@ $tw_af=1;
 		$description=str_replace("&nbsp;","",$description);
 		$excerpt=str_replace("&nbsp;","", $excerpt);
 	
-		if((($xyz_twap_tw_app_sel_mode==1 && !empty($xyz_twap_smapsoln_userid) && !empty($xyz_twap_smapsoln_secret_key) ) ||
-		 ($xyz_twap_tw_app_sel_mode==0 && $taccess_token!="" && $taccess_token_secret!="" && $tappid!="" && $tappsecret!="") || 
+		if(( ($xyz_twap_tw_app_sel_mode==0 && $taccess_token!="" && $taccess_token_secret!="" && $tappid!="" && $tappsecret!="") || 
 		 ($xyz_twap_tw_app_sel_mode==2 && $tw_af!=1 && $tauthToken!='')) && $post_twitter_permission==1)
 		{
 			
@@ -643,50 +639,10 @@ if(isset($resultfrtw->data))
 				}
     			$tw_publish_status_insert=serialize($tw_publish_status.$tweet_id_string);
 	       	}
-
 	       	if($xyz_twap_tw_app_sel_mode==1){
        	    
-       	    $video=$tweet_id_string="";
-       	    $xyz_twap_publish_video_tw=$supported_urls_count=$xyz_twap_multiphoto_tweet=$count_tw=$xyz_twap_use_tw_img_desc=0;
-       	    $multiphoto_urls_tw=$desc_array=array();
-       	    
-       	    $post_details=array('xyz_smap_userid'=>$xyz_twap_smapsoln_userid,
-       	        'xyz_use_tw_img_desc'=>$xyz_twap_use_tw_img_desc,
-       	        'alt_text'=>$desc_array,
-       	        'tw_username'=>$twid,
-       	        'video_length_total_bytes'=>$count_tw,
-       	        'xyz_smap_posting_method'=>$post_twitter_image_permission,
-       	        'xyz_smap_multiphoto_enable'=>$xyz_twap_multiphoto_tweet,
-       	        'multiphoto_count'=>$supported_urls_count,
-       	        'xyz_smap_multiphoto_urls'=>$multiphoto_urls_tw,
-       	        'xyz_smap_video_url'=>$video,
-       	        'xyz_smap_xyzscripts_userid'=>$xyz_twap_xyzscripts_user_id,
-       	        'xyz_smap_premium_publish_video'=>$xyz_twap_publish_video_tw,
-       	        'message'=>$substring,
-       	        'tw_image_url'=>$attachmenturl
-       	    );
-       	    $url=XYZ_TWAP_SMAPSOLUTION_PUBLISH_URL.'api/publish.php';
-       	    $result=xyz_twap_post_to_smap_api($post_details,$url,$xyz_twap_smapsoln_secret_key);
-       	    
-       	    $result=json_decode($result);
-       	    if(!empty($result))
-       	    {
-       	        $tw_api_count=$result->tw_api_count;
-       	        if ($result->status==1)
-       	            $tw_publish_status_insert=serialize("<span style=\"color:green\"> ".$result->msg."</span>");
-   	            elseif ($result->status==0)
-   	            {
-   	                if(isset($result->msg) && !empty($result->msg))
-   	                    $tw_publish_status_insert=serialize("<span style=\"color:red\"> ".$result->msg."</span>");
-   	                    else
-   	                        $tw_publish_status_insert= serialize("<span style=\"color:red\"> Response Not Available.</span>");//1;
+       	        $tw_publish_status_insert= serialize("<span style=\"color:red\"> SMAPSolutions has discontinued its Twitter service </span>");//1;       	        
    	            }
-       	    }
-       	    else
-       	        $tw_publish_status_insert= serialize("<span style=\"color:red\"> Response Not Available.</span>");//1;
-       	        
-	       	}
-		
 			$time=time();
 			$post_tw_options=array(
 					'postid'	=>	$post_ID,

@@ -88,10 +88,7 @@ function twap_install_free()
 		add_option('xyz_twap_tw_app_sel_mode','0');//if already publishing using own app
 	//else
 //		add_option('xyz_twap_tw_app_sel_mode','1');//for new users set smap app as default Application Selection
-	add_option('xyz_twap_smapsoln_userid','0');
-	add_option('xyz_twap_smapsoln_secret_key','');
-	add_option('xyz_twap_xyzscripts_user_id','');
-	add_option('xyz_twap_xyzscripts_hash_val','');
+
 }
 
 

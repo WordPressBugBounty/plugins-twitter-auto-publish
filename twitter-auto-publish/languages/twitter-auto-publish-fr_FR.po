@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: twitter-auto-publish\n"
-"POT-Creation-Date: 2025-07-29 11:43+0530\n"
-"PO-Revision-Date: 2025-07-29 15:26+0530\n"
+"POT-Creation-Date: 2025-10-28 14:39+0530\n"
+"PO-Revision-Date: 2025-10-28 14:39+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.4\n"
+"X-Generator: Poedit 3.0.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: _e;__;esc_html_e\n"
 "X-Poedit-SearchPath-0: admin/about.php\n"
@@ -471,46 +471,54 @@ msgid "Compare Features"
 msgstr "Comparer les fonctionnalités"
 
 #: admin/footer.php:42
+msgid "We are available for custom development"
+msgstr "Nous sommes disponibles pour un développement personnalisé"
+
+#: admin/footer.php:44
+msgid "Get a quote"
+msgstr "Obtenir un devis"
+
+#: admin/footer.php:50
 msgid "Follow Us"
 msgstr "Suivez nous"
 
-#: admin/footer.php:50
+#: admin/footer.php:58
 msgid "Support"
 msgstr "Soutenir"
 
-#: admin/footer.php:51
+#: admin/footer.php:59
 msgid "Contact Us"
 msgstr "Nous contacter"
 
-#: admin/footer.php:52
+#: admin/footer.php:60
 msgid "Please Rate Us"
 msgstr "Veuillez nous évaluer"
 
-#: admin/footer.php:56
+#: admin/footer.php:64
 msgid "Create a ticket at Wordpress forum"
 msgstr "Créer un ticket sur le forum Wordpress"
 
-#: admin/footer.php:59
+#: admin/footer.php:67
 msgid "Stay tuned for our updates"
 msgstr "Restez à l'affût de nos mises à jour"
 
-#: admin/footer.php:123
+#: admin/footer.php:131
 msgid "Name"
 msgstr "Nom"
 
-#: admin/footer.php:139
+#: admin/footer.php:147
 msgid "Email"
 msgstr "E-mail"
 
-#: admin/footer.php:141
+#: admin/footer.php:149
 msgid "Subscribe"
 msgstr "S'abonner"
 
-#: admin/footer.php:153
+#: admin/footer.php:161
 msgid "Our Plugins"
 msgstr "Nos plugins"
 
-#: admin/footer.php:174
+#: admin/footer.php:182
 msgid "Powered by"
 msgstr "Alimenté par"
 
@@ -548,7 +556,7 @@ msgstr "QFP"
 msgid "Readme"
 msgstr "Lisez-moi"
 
-#: admin/header.php:108 admin/menu.php:34
+#: admin/header.php:108 admin/menu.php:35
 msgid "About"
 msgstr "Sur"
 
@@ -592,7 +600,7 @@ msgstr ""
 "Veuillez autoriser l'application %s dans les paramètres Twitter à accéder à "
 "cette page."
 
-#: admin/manage-auth.php:255 admin/menu.php:32
+#: admin/manage-auth.php:255 admin/menu.php:33
 msgid "Manage Authorizations"
 msgstr "Gérer les autorisationss"
 
@@ -683,46 +691,46 @@ msgid "Unable to connect. Please check your curl and firewall settings"
 msgstr ""
 "Impossible de se connecter. Veuillez vérifier vos paramètres curl et pare-feu"
 
-#: admin/menu.php:13
+#: admin/menu.php:14
 msgid "Please check whether the email is correct."
 msgstr "Veuillez vérifier si l'e-mail est correct."
 
-#: admin/menu.php:14
+#: admin/menu.php:15
 msgid "Select atleast one list."
 msgstr "Sélectionnez au moins une liste."
 
-#: admin/menu.php:15
+#: admin/menu.php:16
 msgid "You do not have sufficient permissions"
 msgstr "Vous n’avez pas les autorisations suffisantes"
 
-#: admin/menu.php:16
+#: admin/menu.php:17
 #, php-format
 msgid "Account details successfully deleted from %s"
 msgstr "Les détails du compte ont été supprimés avec succès de %s"
 
-#: admin/menu.php:17
+#: admin/menu.php:18
 #, php-format
 msgid "In-active Twitter account successfully deleted from %s"
 msgstr "Compte Twitter inactif supprimé avec succès de %s"
 
-#: admin/menu.php:18
+#: admin/menu.php:19
 #, php-format
 msgid "Please connect your %s member account"
 msgstr "Veuillez connecter votre compte membre %s"
 
-#: admin/menu.php:19
+#: admin/menu.php:20
 msgid "Thank you for enabling backlink !"
 msgstr "Merci d'avoir activé le backlink !"
 
-#: admin/menu.php:30
+#: admin/menu.php:31
 msgid "Settings"
 msgstr "Réglages"
 
-#: admin/menu.php:33
+#: admin/menu.php:34
 msgid "Logs"
 msgstr "Journaux"
 
-#: admin/menu.php:35
+#: admin/menu.php:36
 msgid "Suggest a Feature"
 msgstr "Suggérer une fonctionnalité"
 
@@ -1165,8 +1173,9 @@ msgstr ""
 "Salut! Je ne suis qu'un plugin, je ne peux pas faire grand-chose lorsqu'il "
 "est appelé directement."
 
-#~ msgid "Every 2 hours"
-#~ msgstr "Toutes les 2 heures"
+#: xyz-functions.php:229
+msgid "Every 2 hours"
+msgstr "Toutes les 2 heures"
 
 #~ msgid "Own App (Traditional: This is for supporting old users) "
 #~ msgstr ""
